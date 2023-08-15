@@ -81,8 +81,7 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 
 const mapTwoToThe = (arr) => {
   // Solution code here...
-  const newArr = [];
-  arr.map((number) => newArr.push(Math.pow(2, number)));
+  const newArr = arr.map((number) => Math.pow(2, number));
   return newArr;
 };
 
@@ -98,8 +97,7 @@ For example: charCode(['h','i']) returns [104, 105].
 
 const charCode = (arr) => {
   // Solution code here...
-  const newArr = [];
-  arr.map((letter) => newArr.push(letter.charCodeAt(0)));
+  const newArr = arr.map((letter) => letter.charCodeAt(0));
   return newArr;
 };
 
@@ -115,16 +113,15 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 
 const evenOdd = (arr) => {
   // Solution code here...
-  const newArr = [];
-  arr.map((element) => {
+  const newArr = arr.map((element) => {
     if (typeof element === "number") {
       if (element % 2 === 0) {
-        newArr.push("even");
+        return "even";
       } else {
-        newArr.push("odd");
+        return "odd";
       }
     } else {
-      newArr.push("N/A");
+      return "N/A";
     }
   });
   return newArr;
