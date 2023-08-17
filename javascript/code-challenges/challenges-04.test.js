@@ -37,6 +37,8 @@ For example: 'Cat' would come before 'apple'
 
 const sortNames = (arr) => {
   // Solution code here...
+  const newArr = arr.sort();
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -49,6 +51,7 @@ HINT: Beware... JS default is "Lexical" ordering.
 
 const sortNumbers = (arr) => {
   // Solution code here...
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
