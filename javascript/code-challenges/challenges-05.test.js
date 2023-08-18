@@ -323,6 +323,14 @@ Write a function named extractChildren that, given the array of characters from 
 
 const extractChildren = (arr) => {
   // Solution code here...
+  const nameArr = arr.filter((character) => character.name.includes("a"));
+  const childrenArr = nameArr.reduce((accumulator, character) => {
+    if (character.children) {
+      accumulator = [...accumulator, ...character.children];
+    }
+    return accumulator;
+  }, []);
+  return childrenArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -419,7 +427,7 @@ describe("Testing challenge 10", () => {
   });
 });
 
-xdescribe("Testing challenge 11", () => {
+describe("Testing challenge 11", () => {
   test("It should return an array containing the names of the children", () => {
     expect(extractChildren(characters)).toStrictEqual([
       "Robb",
