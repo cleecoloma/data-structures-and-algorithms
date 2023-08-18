@@ -230,7 +230,7 @@ const calculateAverage = (arr) => {
     },
     { count: 0, sum: 0 }
   );
-  return average.sum/average.count;
+  return average.sum / average.count;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -252,6 +252,13 @@ const isPrime = (value) => {
 
 const countPrimeNumbers = (arr) => {
   // Solution code here...
+  const primeNumbers = arr.reduce((accumulator, number) => {
+    if (isPrime(number)) {
+      accumulator += 1;
+    }
+    return accumulator;
+  }, 0);
+  return primeNumbers;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -388,7 +395,7 @@ describe("Testing challenge 8", () => {
   });
 });
 
-xdescribe("Testing challenge 9", () => {
+describe("Testing challenge 9", () => {
   test("It should return a count of the prime numbers in the array", () => {
     expect(countPrimeNumbers([1, 2, 13, 64, 45, 56, 17, 8])).toStrictEqual(3);
   });
