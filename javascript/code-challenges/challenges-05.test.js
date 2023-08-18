@@ -301,6 +301,14 @@ const snorlaxData = {
 
 const extractStats = (snorlaxData) => {
   // Solution code here...
+  const newStats = snorlaxData.stats.reduce(
+    (accumulator, data) => {
+      accumulator[data.stat.name] = data.baseStat;
+      return accumulator;
+    },
+    {}
+  );
+  return newStats;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -401,7 +409,7 @@ describe("Testing challenge 9", () => {
   });
 });
 
-xdescribe("Testing challenge 10", () => {
+describe("Testing challenge 10", () => {
   test("It should return an object that contains the names of each stat as individual keys and the respective baseStats as values to those keys.", () => {
     expect(extractStats(snorlaxData)).toStrictEqual({
       speed: 30,
