@@ -25,6 +25,11 @@ Write a function named addValues that, given an array of numbers as input, uses 
 
 const addValues = (arr) => {
   // Solution code here...
+  const initialValue = 0;
+  const newArr = arr.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue;
+  }, initialValue);
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
