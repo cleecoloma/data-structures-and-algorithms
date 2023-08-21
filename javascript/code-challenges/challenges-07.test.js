@@ -130,6 +130,13 @@ const gruffaloCrumble = {
 const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
+  let recipeNames = recipe.map((element) => {
+    let start = 0;
+    for (let i = 0; i < element.name; i++) {
+      
+    };
+  });
+
   return result;
 };
 
