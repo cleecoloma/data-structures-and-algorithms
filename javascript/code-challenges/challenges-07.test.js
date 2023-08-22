@@ -130,13 +130,13 @@ const gruffaloCrumble = {
 const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
-  let recipeNames = recipe.map((element) => {
-    let start = 0;
-    for (let i = 0; i < element.name; i++) {
-      
-    };
-  });
-
+  for (let i = 0; i < recipe.ingredients.length; i++) {
+    const ingredient = recipe.ingredients[i];
+    const indexOfFirstSpace = ingredient.indexOf(" ");
+    const indexOfSecondSpace = ingredient.indexOf(" ", indexOfFirstSpace + 1)
+    const foodName = ingredient.slice(indexOfSecondSpace + 1); // Extract the part after the space
+    result.push(foodName);
+  }
   return result;
 };
 
