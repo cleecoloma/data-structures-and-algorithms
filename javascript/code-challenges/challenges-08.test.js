@@ -97,11 +97,8 @@ For example:
 
 const isNum = (input) => {
   // Solution code here...
-  if (input.includes(dataOf === number)) {
-    return true;
-  } else {
-    return false;
-  }
+  const pattern = /\d/;
+  return pattern.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -230,7 +227,7 @@ describe("Testing challenge 2", () => {
   });
 });
 
-xdescribe("Testing challenge 3", () => {
+describe("Testing challenge 3", () => {
   test("It should return true if the input is a number", () => {
     expect(isNum(1234567890)).toBeTruthy();
     expect(isNum("12345")).toBeTruthy();
