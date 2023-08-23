@@ -75,12 +75,8 @@ Write a function named containsW that takes in a string. This function should us
 
 const containsW = (str) => {
   // Solution code here...
-  const letter = "w";
-  if (str.includes(letter)) {
-    return true;
-  } else {
-    return false;
-  }
+  const pattern = /w/;
+  return pattern.test(str);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -110,6 +106,8 @@ Write a function named containsWorld that takes in a string or number of any len
 
 const containsWorld = (input) => {
   // Solution code here...
+  const pattern = /\bworld\b/;
+  return pattern.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -241,7 +239,7 @@ describe("Testing challenge 3", () => {
   });
 });
 
-xdescribe("Testing challenge 4", () => {
+describe("Testing challenge 4", () => {
   test('It should return true if the input contains the word "world" in lower case', () => {
     expect(containsWorld("hello world")).toBe(true);
   });
