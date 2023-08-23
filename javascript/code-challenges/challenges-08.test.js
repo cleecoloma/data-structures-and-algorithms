@@ -54,7 +54,14 @@ let characters = [
 
 const sortByChildren = (charArray) => {
   // Solution code here...
-  return charArray.sort((a, b) => a.children.length - b.children.length);
+  charArray.sort((a, b) => {
+    if (a.children.length !== b.children.length) {
+      return a.children.length - b.children.length;
+    } else {
+      return a.name.localeCompare(b.house);
+    }
+  });
+  return charArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
