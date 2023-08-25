@@ -147,6 +147,15 @@ const errands = [
 
 const howManyTreats = (arr) => {
   // Solution code here...
+  for (const element of arr) {
+    if (element.store === 'Pet store') {
+      for (const item of element.items) {
+        if (item.name === 'Treats') {
+          return item.quantity;
+        }
+      }
+    }
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
