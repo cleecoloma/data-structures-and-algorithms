@@ -94,7 +94,7 @@ const divisibleByFiveTwoToThePower = (input) => {
       if (typeof num === 'number' && num % 5 === 0) {
         matrix[i].push(Math.pow(2, num));
       }
-  
+    }
   }
   return matrix;
 };
@@ -182,14 +182,12 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 
 let findShortest = (data) => {
   // Solution code here...
-  const shortestPerson = data.reduce((accumulator, character) => {
+  const shortestHeight = data.reduce((shortest, character) => {
     const height = parseInt(character.height);
-    if (height < parseInt(accumulator.height)) {
-      return character;
-    } 
-    return accumulator;
-  }, null);
-  return shortestPerson.name;
+    return height < shortest ? height : shortest;
+  }, Infinity);
+  const shortestPerson = data.filter(character => parseInt(character.height) === shortestHeight);
+  return shortestPerson.map(character => character.name).join('');
 };
 
 /* ------------------------------------------------------------------------------------------------
