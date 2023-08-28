@@ -89,13 +89,12 @@ const divisibleByFiveTwoToThePower = (input) => {
   let matrix = [];
   for (let i = 0; i < input.length; i++) {
     matrix[i] = [];
-  }
-  for (let i = 0; i < input.length; i++) {
     for (let j = 0; j < input[i].length; j++) {
-      if (input[i][j] % 5 === 0) {
-        matrix[i][j] = (Math.pow(2, input[i][j]));
+      let num = input[i][j];
+      if (typeof num === 'number' && num % 5 === 0) {
+        matrix[i].push(Math.pow(2, num));
       }
-    }
+  
   }
   return matrix;
 };
