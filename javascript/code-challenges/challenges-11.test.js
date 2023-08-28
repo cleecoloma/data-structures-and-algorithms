@@ -86,6 +86,18 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 
 const divisibleByFiveTwoToThePower = (input) => {
   // Solution code here...
+  let matrix = [];
+  for (let i = 0; i < input.length; i++) {
+    matrix[i] = [];
+  }
+  for (let i = 0; i < input.length; i++) {
+    for (let j = 0; j < input[i].length; j++) {
+      if (input[i][j] % 5 === 0) {
+        matrix[i][j] = (Math.pow(2, input[i][j]));
+      }
+    }
+  }
+  return matrix;
 };
 
 /* ------------------------------------------------------------------------------------------------
