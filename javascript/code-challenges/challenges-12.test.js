@@ -51,6 +51,8 @@ If it does, return true. If not, return false.
 
 const hasNumber = (string) => {
   // Solution code here...
+  const pattern = /[A-Za-z]+\d+/;
+  return pattern.test(string);
 };
 
 /* ------------------------------------------------------------------------------------------------
