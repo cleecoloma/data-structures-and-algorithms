@@ -79,6 +79,11 @@ For example, 'abcdefg' returns 'bdf'
 
 const onlyOddChars = (str) => {
   // Solution code here...
+  let newStr = '';
+  for (let i = 1; i < str.length; i += 2) {
+    newStr += str[i];
+  }
+  return newStr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -89,6 +94,7 @@ Write a function named allHappy that takes in an array of strings and returns a 
 
 const allHappy = (arr) => {
   // Solution code here...
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
