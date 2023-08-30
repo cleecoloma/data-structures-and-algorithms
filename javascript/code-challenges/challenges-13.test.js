@@ -42,6 +42,13 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 
 const findHappiness = (arr) => {
   // Solution code here...
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].includes(':)')) {
+      newArr.push(arr[i]);
+    }
+  }
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
