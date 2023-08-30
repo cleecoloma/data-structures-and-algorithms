@@ -94,7 +94,7 @@ Write a function named allHappy that takes in an array of strings and returns a 
 
 const allHappy = (arr) => {
   // Solution code here...
-  
+  return arr.every((str) => str.includes(":)"));
 };
 
 /* ------------------------------------------------------------------------------------------------
