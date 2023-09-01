@@ -198,6 +198,35 @@ Here is a sample board:
 
 const detectTicTacToeWin = (board) => {
   // Solution code here...
+  const helpCheck = (board, row1, col1, row2, col2, row3, col3) => {
+    const value1 = board[row1][col1];
+    const value2 = board[row2][col2];
+    const value3 = board[row3][col3];
+    return value1 !== "" && value1 === value2 && value2 === value3;
+  };
+
+  for (let row = 0; row < 3; row++) {
+    if (helpCheck(board, row, 0, row, 1, row, 2)) {
+      return true;
+    }
+  }
+
+  // Check columns
+  for (let col = 0; col < 3; col++) {
+    if (helpCheck(board, 0, col, 1, col, 2, col)) {
+      return true;
+    }
+  }
+
+  // Check diagonals
+  if (
+    helpCheck(board, 0, 0, 1, 1, 2, 2) ||
+    helpCheck(board, 0, 2, 1, 1, 2, 0)
+  ) {
+    return true;
+  }
+
+  return false;
 };
 
 /* ------------------------------------------------------------------------------------------------
