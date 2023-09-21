@@ -7,6 +7,7 @@
 | -------------- |  -------------- |
 | [Class-01](./javascript/array-reverse/README.md) | Reverse an array |
 | [Class-02](./javascript/array-insert-shift/README.md) | Insert and shift array in middle at index |
+| [Class-03](./javascript/array-binary-search/README.md) | Binary search in a sorted 1D array |
 
 ---
 
