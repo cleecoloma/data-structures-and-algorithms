@@ -1,23 +1,22 @@
-# Data Structures and Algorithms
+# Data Structures And Algorithms
+> This repository contains Data Structures and Algorithms Code Challenges for Code Fellows Code 301 and 401.
 
-See [setup instructions](https://codefellows.github.io/setup-guide/code-301/2-code-challenges), in the Code 301 Setup Guide.
+## Table of Contents
 
-## Repository Quick Tour and Usage
+| Code Challenge | Description |
+| -------------- |  -------------- |
+| [Class-01](./javascript/array-reverse/README.md) | Reverse an array |
+| [Class-02](./javascript/array-insert-shift/README.md) | Insert and shift array in middle at index |
 
-### 301 Code Challenges
+---
 
-Under the `javascript` folder, at the top level, is a sub-folder called `code-challenges`
+### About Me
+![Profile Picture](https://avatars.githubusercontent.com/u/104961833?s=400&u=842fa7c8bb9c0fbfcf956655c2b13dff928e128d&v=4)
+> I'm **Chester Lee Coloma**. A full-stack software developer with a focus on responsive design and user interface (UI) development. Former mechanical engineer with an active secret clearance and 8+ years of professional working experience in team oriented roles to deliver technically sound solutions to maintain the US Navy submarines while adhering to rigid documentation. 
 
-Each day, you'll add one new file to this folder to do your work for the day's assigned code challenge
+See my work below:
+[GitHub Page](https://github.com/cleecoloma)
 
-If you have not already done so, run `npm install` from within this folder to setup your system to be able to run tests using `Jest`
-
-To run your tests
-
-- Change to the `javascript` folder
-- run `npm test` to run all of the tests
-- run `npm test ##` to only run tests for challenge ## (i.e. 01)
-
-### 401 Data Structures, Code Challenges
-
-- Please follow the instructions specific to your 401 language, which can be found in the directory below, matching your course.
+Get in touch with me:
+Here's the link to my Linked page:
+[LinkedIn Page](https://www.linkedin.com/in/chesterleecoloma/)
