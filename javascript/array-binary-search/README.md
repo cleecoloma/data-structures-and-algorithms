@@ -8,7 +8,8 @@
 ### Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 > I utilized one while loop and two for loops for this function. The while loop runs until left endpoint is equals to right endpoint. Left and right endpoints adjust depending on where the value at index mid. If value at index mid is equals to the search key, function returns that mid index. Else, returns not found
-> The space complexity is O(1) and time complexity is O(log n). I got help from ChatGPT for determining the complexity as im not familiar with it yet.
+
+* The space complexity is O(1) and time complexity is O(log n). I got help from ChatGPT for determining the complexity as im not familiar with it yet.
 
 ### Solution
 <!-- Show how to run your code, and examples of it in action -->

@@ -8,7 +8,8 @@
 ### Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 > I utilized a for loop that iterated the input array at a descending order starting with the input array length minus 1 as the starting index. The element in this input array was then push inside an empty array until the starting index is equal to 0. This function will return an array in reversed order.
-> The space complexity is O(n) and time complexity is O(n).
+
+* The space complexity is O(n) and time complexity is O(n).
 
 ### Solution
 <!-- Show how to run your code, and examples of it in action -->
