@@ -28,9 +28,11 @@ class LinkedList {
     let current = this.head;
     let stringToLog = "";
     while (current) {
-      stringToLog.concat(`{ ${current.value} } -> `);
+      stringToLog = stringToLog.concat(`{ ${current.value} } -> `);
+      current = current.next;
     }
-    stringToLog.concat("NULL");
+    stringToLog = stringToLog.concat("NULL");
+    return stringToLog;
   }
 }
 

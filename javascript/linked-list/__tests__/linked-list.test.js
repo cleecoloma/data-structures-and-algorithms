@@ -20,7 +20,6 @@ describe("Testing the Linked List class", () => {
   test("The head property will properly point to the first node in the linked list", () => {
     let linkedList = new LinkedList();
     linkedList.insert("node1");
-    console.log("Log: ", linkedList.head);
 
     expect(linkedList.head.value).toEqual("node1");
     expect(linkedList.head.next).toEqual(null);
@@ -45,14 +44,26 @@ describe("Testing the Linked List class", () => {
     linkedList.insert("node4");
 
     expect(linkedList.include("node2")).toBe(true);
+  });
+
+  test("Will return false when searching for a value in the linked list that does not exist", () => {
+    let linkedList = new LinkedList();
+    linkedList.insert("node1");
+    linkedList.insert("node2");
+    linkedList.insert("node3");
+    linkedList.insert("node4");
+
     expect(linkedList.include("node5")).toBe(false);
   });
 
-  xtest("Will return false when searching for a value in the linked list that does not exist", () => {
-    expect(true).toBe(false);
-  });
-
-  xtest("Can properly return a collection of all the values that exist in the linked list", () => {
-    expect(true).toBe(false);
+  test("Can properly return a collection of all the values that exist in the linked list", () => {
+    let linkedList = new LinkedList();
+    linkedList.insert("node1");
+    linkedList.insert("node2");
+    linkedList.insert("node3");
+    linkedList.insert("node4");
+    
+    console.log("Log: ", linkedList, linkedList.toString());
+    expect(linkedList.toString()).toBe("{ node4 } -> { node3 } -> { node2 } -> { node1 } -> NULL");
   });
 });
