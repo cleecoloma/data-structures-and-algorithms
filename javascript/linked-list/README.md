@@ -22,6 +22,7 @@
 
 ### Solution
 <!-- Show how to run your code, and examples of it in action -->
+[Link to code](https://github.com/cleecoloma/data-structures-and-algorithms/blob/main/javascript/linked-list/index.js)
 ```text
 npm test
 ```
