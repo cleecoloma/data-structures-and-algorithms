@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 class LinkedList {
   constructor() {
@@ -6,16 +6,16 @@ class LinkedList {
   }
 
   insert(value) {
-    let current = this.head;
     let newNode = new Node(value);
-    newNode.next = current;
+    newNode.next = this.head;
+    this.head = newNode;
   }
 
   include(value) {
     let current = this.head;
     let isValueIncluded = false;
     while (current.next) {
-      current = current.next
+      current = current.next;
       if (current.value === value) {
         isValueIncluded = true;
         break;
@@ -26,11 +26,11 @@ class LinkedList {
 
   toString() {
     let current = this.head;
-    let stringToLog = '';
+    let stringToLog = "";
     while (current) {
       stringToLog.concat(`{ ${current.value} } -> `);
     }
-    stringToLog.concat('NULL');
+    stringToLog.concat("NULL");
   }
 }
 
@@ -41,5 +41,7 @@ class Node {
   }
 }
 
-
-module.exports = LinkedList;
+module.exports = {
+  LinkedList,
+  Node,
+};
