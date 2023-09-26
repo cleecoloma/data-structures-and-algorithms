@@ -2,7 +2,7 @@
 
 const { LinkedList, Node } = require("../index.js");
 
-xdescribe("Testing the Linked List class", () => {
+describe("Testing the Linked List class", () => {
   test("Can successfully instantiate an empty linked list", () => {
     let linkedList = new LinkedList();
 
@@ -70,7 +70,7 @@ xdescribe("Testing the Linked List class", () => {
   });
 });
 
-describe("Testing the Linked List insertion implementation", () => {
+describe("Testing the Linked List insertion implementation.", () => {
   test("Can successfully add a node to the end of the linked list", () => {
     let linkedList = new LinkedList();
     linkedList.append("node1");
@@ -86,7 +86,7 @@ describe("Testing the Linked List insertion implementation", () => {
     expect(linkedList.toString()).toBe("{ node1 } -> { node2 } -> NULL");
   });
 
-  test("Can successfully insert a n0de before a node located in the middle of a linked list", () => {
+  test("Can successfully insert a n0de before a node located in the middle of a linked list ", () => {
     let linkedList = new LinkedList();
     linkedList.append("node1");
     linkedList.append("node2");
@@ -120,7 +120,7 @@ describe("Testing the Linked List insertion implementation", () => {
     expect(linkedList.include("node2")).toBe(true);
   });
 
-  test("Can successfully insert a node after the last node of the linked list", () => {
+  test("Can successfully insert a node after the last node of the linked list.", () => {
     let linkedList = new LinkedList();
     linkedList.append("node1");
     linkedList.append("node2");
@@ -131,5 +131,4 @@ describe("Testing the Linked List insertion implementation", () => {
       "{ node1 } -> { node3 } -> { node2 } -> NULL"
     );
   });
-
 });
