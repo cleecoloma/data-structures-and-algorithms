@@ -110,7 +110,7 @@ describe("Testing the Linked List insertion implementation", () => {
     );
   });
 
-  xtest("Can successfully insert after a node in the middle of the linked list", () => {
+  test("Can successfully insert after a node in the middle of the linked list", () => {
     let linkedList = new LinkedList();
     linkedList.insert("node1");
     linkedList.insert("node2");
@@ -120,26 +120,16 @@ describe("Testing the Linked List insertion implementation", () => {
     expect(linkedList.include("node2")).toBe(true);
   });
 
-  xtest("Can successfully insert a node after the last node of the linked list", () => {
+  test("Can successfully insert a node after the last node of the linked list", () => {
     let linkedList = new LinkedList();
-    linkedList.insert("node1");
-    linkedList.insert("node2");
-    linkedList.insert("node3");
-    linkedList.insert("node4");
+    linkedList.append("node1");
+    linkedList.append("node2");
+    linkedList.insertAfter("node1", "node3");
 
-    expect(linkedList.include("node5")).toBe(false);
-  });
-
-  xtest("Can properly return a c0llection of all the values that exist in the linked list", () => {
-    let linkedList = new LinkedList();
-    linkedList.insert("node1");
-    linkedList.insert("node2");
-    linkedList.insert("node3");
-    linkedList.insert("node4");
-
-    console.log("Log: ", linkedList, linkedList.toString());
+    expect(linkedList.head.value).toEqual("node1");
     expect(linkedList.toString()).toBe(
-      "{ node4 } -> { node3 } -> { node2 } -> { node1 } -> NULL"
+      "{ node1 } -> { node3 } -> { node2 } -> NULL"
     );
   });
+
 });
