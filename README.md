@@ -9,6 +9,7 @@
 | [Class-02](./javascript/array-insert-shift/README.md) | Insert and shift array in middle at index |
 | [Class-03](./javascript/array-binary-search/README.md) | Binary search in a sorted 1D array |
 | [Class-04](./javascript/linked-list/README.md) | Linked List Implementation |
+| [Class-06](./javascript/linked-list/README.md) | Linked List Insertion |
 
 ---
 
