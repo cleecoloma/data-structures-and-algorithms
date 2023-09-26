@@ -38,7 +38,15 @@ class LinkedList {
   append(value) {
     let current = this.head;
     let newNode = new Node(value);
-    while (current.next) {
+
+    // checks to see if there's initial node. If not, adds newNode as head
+    if (!current) {
+      this.head = newNode;
+      return;
+    }
+
+    // iterates until next node is null
+    while (current.next !== null) {
       current = current.next;
     }
     current.next = newNode;
@@ -48,10 +56,16 @@ class LinkedList {
     let current = this.head;
     let newNode = new Node(newValue);
 
+    // checks if theres no node, then add new node
+    if (!current) {
+      this.head = newNode;
+      return;
+    }
+
     // inserts newNode before head if head.value is equals to value
     if (current.value === value) {
       newNode.next = current;
-      current = newNode;
+      this.head = newNode;
       return;
     }
 

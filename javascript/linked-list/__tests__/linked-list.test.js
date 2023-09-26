@@ -17,7 +17,7 @@ xdescribe("Testing the Linked List class", () => {
     expect(linkedList.head.value).toEqual("node2");
   });
 
-  test("The head property will properly point to the first node in the linked list", () => {
+  test("The head property will properly poiint to the first node in the linked list", () => {
     let linkedList = new LinkedList();
     linkedList.insert("node1");
 
@@ -62,9 +62,11 @@ xdescribe("Testing the Linked List class", () => {
     linkedList.insert("node2");
     linkedList.insert("node3");
     linkedList.insert("node4");
-    
+
     console.log("Log: ", linkedList, linkedList.toString());
-    expect(linkedList.toString()).toBe("{ node4 } -> { node3 } -> { node2 } -> { node1 } -> NULL");
+    expect(linkedList.toString()).toBe(
+      "{ node4 } -> { node3 } -> { node2 } -> { node1 } -> NULL"
+    );
   });
 });
 
@@ -72,27 +74,28 @@ describe("Testing the Linked List insertion implementation", () => {
   test("Can successfully add a node to the end of the linked list", () => {
     let linkedList = new LinkedList();
     linkedList.append("node1");
+
+    expect(linkedList.toString()).toBe("{ node1 } -> NULL");
+  });
+
+  test("Can successfully add multiple nodes to the end of a linked list", () => {
+    let linkedList = new LinkedList();
+    linkedList.append("node1");
     linkedList.append("node2");
 
+    expect(linkedList.toString()).toBe("{ node1 } -> { node2 } -> NULL");
+  });
+
+  test("Can successfully insert a n0de before a node located in the middle of a linked list", () => {
+    let linkedList = new LinkedList();
+    linkedList.append("node1");
+    linkedList.append("node2");
+    linkedList.insertBefore("node1", "node3");
+
+    // expect(linkedList.head.value).toEqual("node3");
     expect(linkedList.toString()).toBe(
-      "{ node1 } -> { node2 } -> NULL"
+      "{ node3 } -> { node1 } -> { node2 } -> NULL"
     );
-  });
-
-  xtest("Can successfully add multiple nodes to the end of a linked list", () => {
-    let linkedList = new LinkedList();
-    linkedList.insert("node1");
-    linkedList.insert("node2");
-
-    expect(linkedList.head.value).toEqual("node2");
-  });
-
-  xtest("Can successfully insert a n0de before a node located i the middle of a linked list", () => {
-    let linkedList = new LinkedList();
-    linkedList.insert("node1");
-
-    expect(linkedList.head.value).toEqual("node1");
-    expect(linkedList.head.next).toEqual(null);
   });
 
   xtest("Can successfully insert a node before the first node of a linked list", () => {
