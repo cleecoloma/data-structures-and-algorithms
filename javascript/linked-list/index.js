@@ -44,7 +44,44 @@ class LinkedList {
     current.next = newNode;
   }
 
+  insertBefore(value, newValue) {
+    let current = this.head;
+    let newNode = new Node(newValue);
 
+    // inserts newNode before head if head.value is equals to value
+    if (current.value === value) {
+      newNode.next = current;
+      current = newNode;
+      return;
+    }
+
+    // traverse linked list if next node is not null
+    while (current.next !== null) {
+      // inserts newNode if next node value is equals to value
+      if (current.next.value === value) {
+        newNode.next = current.next;
+        current.next = newNode;
+        return;
+      }
+      current = current.next;
+    }
+  }
+
+  insertAfter(value, newValue) {
+    let current = this.head;
+    let newNode = new Node(newValue);
+
+    // traverse linked list if current node is not null
+    while (current !== null) {
+      // inserts newNode if next node value is equals to value
+      if (current.value === value) {
+        newNode.next = current.next;
+        current.next = newNode;
+        return;
+      }
+      current = current.next;
+    }
+  }
 }
 
 class Node {
