@@ -34,6 +34,17 @@ class LinkedList {
     stringToLog = stringToLog.concat("NULL");
     return stringToLog;
   }
+
+  append(value) {
+    let current = this.head;
+    let newNode = new Node(value);
+    while (current.next) {
+      current = current.next;
+    }
+    current.next = newNode;
+  }
+
+
 }
 
 class Node {
