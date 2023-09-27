@@ -18,8 +18,6 @@
 ```text
 npm test
 ```
-![LL Insertion Test](../images/linked-list-insertion-test.png)
-![LL Test](../images/linked-list-test.png)
-
+![Linked List Kth From End](../images/linked-list-kth-from-end-test.png)
 
 
