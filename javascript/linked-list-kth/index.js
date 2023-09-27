@@ -5,9 +5,27 @@ class LinkedList {
     this.head = null;
   }
 
+  append(value) {
+    let current = this.head;
+    let newNode = new Node(value);
+    if (!current) {
+      this.head = newNode;
+      return;
+    }
+    while (current.next !== null) {
+      current = current.next;
+    }
+    current.next = newNode;
+  }
+
   kthFromEnd(k) {
     let current = this.head;
     let pointer = this.head;
+
+    // if k is less than 0, it returns -1
+    if (k < 0) {
+      return -1;
+    }
 
     // checks if k is 0, it would return the value of last node
     if (k === 0) {
@@ -19,7 +37,8 @@ class LinkedList {
 
     //  moves pointer to k nodes ahead of current
     while (k) {
-      if (!pointer) {
+      // returns -1 if pointer.next is null
+      if (!pointer.next) {
         return -1;
       }
       pointer = pointer.next;
