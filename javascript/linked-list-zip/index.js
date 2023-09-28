@@ -17,48 +17,46 @@ class LinkedList {
     }
     current.next = newNode;
   }
-
-  kthFromEnd(k) {
-    let current = this.head;
-    let pointer = this.head;
-
-    // if k is less than 0, it returns -1
-    if (k < 0) {
-      return -1;
-    }
-
-    // checks if k is 0, it would return the value of last node
-    if (k === 0) {
-      while (current.next) {
-        current = current.next;
-      }
-      return current.value;
-    }
-
-    //  moves pointer to k nodes ahead of current
-    while (k) {
-      // returns -1 if pointer.next is null
-      if (!pointer.next) {
-        return -1;
-      }
-      pointer = pointer.next;
-      k--;
-    }
-
-    // iterates until pointer.next is null
-    while (pointer.next) {
-      current = current.next;
-      pointer = pointer.next;
-    }
-
-    return current.value;
-  }
 }
+
 class Node {
   constructor(value) {
     this.value = value;
     this.next = null;
   }
+}
+
+function zipLists(list1, list2) {
+  const result = new LinkedList();
+  let current1 = list1.head;
+  let current2 = list2.head;
+  let currentResult = null;
+
+  while (current1 || current2) {
+    if (current1) {
+      if (!currentResult) {
+        currentResult = new Node(current1.value);
+        result.head = currentResult;
+      } else {
+        currentResult.next = new Node(current1.value);
+        currentResult = currentResult.next;
+      }
+      current1 = current1.next;
+    }
+
+    if (current2) {
+      if (!currentResult) {
+        currentResult = new Node(current2.value);
+        result.head = currentResult;
+      } else {
+        currentResult.next = new Node(current2.value);
+        currentResult = currentResult.next;
+      }
+      current2 = current2.next;
+    }
+  }
+
+  return result;
 }
 
 module.exports = {
