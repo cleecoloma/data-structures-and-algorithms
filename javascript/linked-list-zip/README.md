@@ -18,6 +18,6 @@
 ```text
 npm test
 ```
-![Linked List Kth From End](../images/linked-list-zip-test.png)
+![Linked List Zip](../images/linked-list-zip-test.png)
 
 
