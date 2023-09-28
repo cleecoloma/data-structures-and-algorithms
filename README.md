@@ -11,6 +11,7 @@
 | [Class-04](./javascript/linked-list/README.md) | Linked List Implementation |
 | [Class-06](./javascript/linked-list/README.md) | Linked List Insertion |
 | [Class-07](./javascript/linked-list-kth/README.md) | Linked List Kth From End |
+| [Class-08](./javascript/linked-list-zip/README.md) | Linked List Zip |
 
 ---
 
