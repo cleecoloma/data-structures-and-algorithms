@@ -1,0 +1,11 @@
+{
+  "name": "stack-and-queue",
+  "version": "1.0.0",
+  "description": "> This coding challenge is to create Linked List method - zip. This method zip two linked lists together into one so that the nodes alternate between the two lists and return a reference to the the zipped list.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chester",
+  "license": "ISC"
+}
