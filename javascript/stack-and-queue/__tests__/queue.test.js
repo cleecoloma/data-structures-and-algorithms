@@ -95,6 +95,11 @@ describe("Queue", () => {
     expect(queue.isEmpty()).toEqual(true);
   });
 
+  it("Can successfully instantiate an empty queue", () => {
+    const queue = new Queue();
+    expect(() => queue.peek()).toThrow("Queue is empty");
+  });
+
   it("Calling dequeue or peek on empty queue raises exception", () => {
     const queue = new Queue();
     expect(() => queue.peek()).toThrow("Queue is empty");
