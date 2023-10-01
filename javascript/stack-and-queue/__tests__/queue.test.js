@@ -55,31 +55,28 @@ describe("Queue", () => {
   //   expect(actual).toEqual(expected);
   // });
   it("Can successfully enqueue into a queue", () => {
-    const stack = new Stack();
-    stack.push("apple");
-    stack.push("orange");
-    expect(stack.peek()).toEqual("orange");
+    const queue = new Queue();
+    queue.enqueue("apple");
+    expect(queue.peek()).toEqual("apple");
   });
 
   it("Can successfully enqueue multiple values into a queue", () => {
-    const stack = new Stack();
-    stack.push("apple");
-    stack.push("orange");
-    expect(stack.pop()).toEqual("orange");
-    expect(stack.peek()).toEqual("apple");
+    const queue = new Queue();
+    queue.enqueue("apple");
+    queue.enqueue("orange");
+    expect(queue.peek()).toEqual("apple");
+    expect(queue.rear.value).toEqual("orange");
   });
 
   it("Can successfully dequeue out of a queue the expected value", () => {
-    const stack = new Stack();
-    stack.push("apple");
-    stack.push("banana");
-    stack.push("orange");
-    stack.push("strawberry");
-    expect(stack.pop()).toEqual("strawberry");
-    expect(stack.pop()).toEqual("orange");
-    expect(stack.pop()).toEqual("banana");
-    expect(stack.pop()).toEqual("apple");
-    expect(stack.isEmpty()).toEqual(true);
+    const queue = new Queue();
+    queue.enqueue("apple");
+    queue.enqueue("banana");
+    queue.enqueue("orange");
+    
+    expect(queue.dequeue()).toEqual("apple");
+    console.log("heres the queue ", queue);
+    expect(queue.peek()).toEqual("banana");
   });
 
   it("Can successfully peek into a queue, seeing the expected value", () => {
@@ -94,9 +91,9 @@ describe("Queue", () => {
     expect(stack.isEmpty()).toEqual(true);
   });
 
-  it("Can successfully instantiate an empty queue", () => {
+  it("Calling dequeue or peek on empty queue raises exception", () => {
     const stack = new Stack();
-    expect(() => stack.peek()).toThrow("Stack is empty");
-    expect(() => stack.pop()).toThrow("Stack is empty");
+    expect(() => queue.peek()).toThrow("Queue is empty");
+    expect(() => queue.dequeue()).toThrow("Queue is empty");
   });
 });

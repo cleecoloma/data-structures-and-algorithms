@@ -14,11 +14,13 @@ class Queue {
 
   enqueue(value) {
     const newNode = new Node(value);
-    newNode.next = this.rear;
-    this.rear = newNode;
 
-    if (this.front === null) {
-      this.front = this.rear;
+    if (this.isEmpty()) {
+      this.front = newNode;
+      this.rear = newNode;
+    } else {
+      this.rear.next = newNode;
+      this.rear = newNode;
     }
   }
 
