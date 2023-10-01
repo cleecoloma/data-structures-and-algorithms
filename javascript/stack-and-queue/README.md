@@ -1,6 +1,6 @@
 # Challenge Title
 ## Stack And Queue
-> This coding challenge is to create Linked List method - zip. This method zip two linked lists together into one so that the nodes alternate between the two lists and return a reference to the the zipped list.
+> This coding challenge is to utilize a Linked List as the underlying data storage mechanism to implement both a `Stack` and a `Queue.`
 
 ### Whiteboard Process
 ![Linked List Zip](../images/linked-list-zip.png)
