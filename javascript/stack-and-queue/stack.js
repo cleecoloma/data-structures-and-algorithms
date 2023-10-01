@@ -17,9 +17,19 @@ class Stack {
     this.top = newNode;
   }
 
+  pop() {
+    if (this.isEmpty()) {
+      throw new Error("Stack is empty");
+    }
+    const oldTop = this.top.value;
+    this.top = this.top.next;
+
+    return oldTop;
+  }
+
   peek() {
     if (this.isEmpty()) {
-      throw new Error('Stack is empty, silly');
+      throw new Error("Stack is empty");
     }
 
     return this.top.value;
