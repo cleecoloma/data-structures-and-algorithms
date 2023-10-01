@@ -73,22 +73,26 @@ describe("Queue", () => {
     queue.enqueue("apple");
     queue.enqueue("banana");
     queue.enqueue("orange");
-    
     expect(queue.dequeue()).toEqual("apple");
-    console.log("heres the queue ", queue);
     expect(queue.peek()).toEqual("banana");
   });
 
   it("Can successfully peek into a queue, seeing the expected value", () => {
-    const stack = new Stack();
-    stack.push("apple");
-    stack.push("blueberry");
-    expect(stack.peek()).toEqual("blueberry");
+    const queue = new Queue();
+    queue.enqueue("apple");
+    queue.enqueue("blueberry");
+    expect(queue.peek()).toEqual("apple");
   });
 
   it("Can successfully empty a queue after multiple dequeues", () => {
-    const stack = new Stack();
-    expect(stack.isEmpty()).toEqual(true);
+    const queue = new Queue();
+    queue.enqueue("apple");
+    queue.enqueue("blueberry");
+    queue.enqueue("banana");
+    queue.dequeue();
+    queue.dequeue();
+    queue.dequeue();
+    expect(queue.isEmpty()).toEqual(true);
   });
 
   it("Calling dequeue or peek on empty queue raises exception", () => {
