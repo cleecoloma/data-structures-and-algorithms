@@ -96,7 +96,7 @@ describe("Queue", () => {
   });
 
   it("Calling dequeue or peek on empty queue raises exception", () => {
-    const stack = new Stack();
+    const queue = new Queue();
     expect(() => queue.peek()).toThrow("Queue is empty");
     expect(() => queue.dequeue()).toThrow("Queue is empty");
   });
