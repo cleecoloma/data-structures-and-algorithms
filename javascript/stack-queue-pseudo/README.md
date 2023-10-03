@@ -3,15 +3,17 @@
 > This coding challenge is to implement a `Queue` using two `Stacks`.
 
 ### Whiteboard Process
-![Stack And Queue](../images/stack-and-queue.png)
+![Stack Queue Pseudo](../images/stack-queue-pseudo.png)
 
 ### Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 
-1. Stack.push()
-  * Time Complexity - O(1) - adds a new node to the top of the stack.
-1. Queue.enqueue()
-  * Time Complexity - O(1) - adds a new node to the back of the queue.
+1. Enqueue(value)
+  * Time Complexity - O(1)
+  * Space Complexity - O(1)
+1. Dequeue()
+  * Time Complexity - O(n)
+  * Space Complexity - O(n)
 
 ### Solution
 <!-- Show how to run your code, and examples of it in action -->

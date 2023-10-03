@@ -12,8 +12,14 @@ class StackQueuePseudo {
     this.stack1.push(value);
   }
 
-  dequeue
-
+  dequeue() {
+    if (this.stack2.length === 0) {
+      while (this.stack1.length > 0) {
+        this.stack2.push(this.stack1.pop());
+      }
+    }
+    return this.stack2.pop();
+  }
 }
 
 module.exports = StackQueuePseudo;
