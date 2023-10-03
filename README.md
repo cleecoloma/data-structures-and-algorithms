@@ -13,6 +13,7 @@
 | [Class-07](./javascript/linked-list-kth/README.md) | Linked List Kth From End |
 | [Class-08](./javascript/linked-list-zip/README.md) | Linked List Zip |
 | [Class-10](./javascript/stack-and-queue/README.md) | Stack And Queue |
+| [Class-11](./javascript/stack-queue-pseudo/README.md) | Stack Queue Pseudo |
 
 ---
 
