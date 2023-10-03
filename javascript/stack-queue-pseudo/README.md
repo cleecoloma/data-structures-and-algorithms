@@ -21,5 +21,5 @@
 ```text
 npm test
 ```
-![Linked List Zip](../images/stack-and-queue-test.png)
+![Stack Queue Pseudo](../images/stack-and-queue-test.png)
 
