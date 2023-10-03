@@ -1,6 +1,5 @@
 'use strict';
 
-const Stack = require("../../stack-and-queue/stack.js");
 const StackQueuePseudo = require("../stack-queue-pseudo.js");
 
 describe("StackQueuePseudo", () => {
