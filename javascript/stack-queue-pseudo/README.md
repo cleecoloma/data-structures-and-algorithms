@@ -17,7 +17,7 @@
 
 ### Solution
 <!-- Show how to run your code, and examples of it in action -->
-[Link to code](https://github.com/cleecoloma/data-structures-and-algorithms/blob/main/javascript/linked-list-zip/index.js)
+[Link to code](https://github.com/cleecoloma/data-structures-and-algorithms/tree/main/javascript/stack-queue-pseudo)
 ```text
 npm test
 ```
