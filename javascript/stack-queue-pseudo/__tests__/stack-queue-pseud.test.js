@@ -30,7 +30,9 @@ describe("StackQueuePseudo", () => {
     expect(stackQueuePseudo.dequeue()).toBe(3);
   });
 
-  it("should return null when trying to dequeue an empty queue", () => {
-    expect(stackQueuePseudo.dequeue()).toBeNull();
+  it("should throw an error when dequeuing from an empty queue", () => {
+    expect(() => {
+      stackQueuePseudo.dequeue();
+    }).toThrow("Stack is empty");
   });
 });

@@ -13,10 +13,13 @@ class StackQueuePseudo {
   }
 
   dequeue() {
-    if (this.stack2.length === 0) {
-      while (this.stack1.length > 0) {
+    if (this.stack2.isEmpty()) {
+      while (!this.stack1.isEmpty()) {
         this.stack2.push(this.stack1.pop());
       }
+    }
+    if (this.stack2.isEmpty()) {
+      throw new Error("Stack is empty");
     }
     return this.stack2.pop();
   }
