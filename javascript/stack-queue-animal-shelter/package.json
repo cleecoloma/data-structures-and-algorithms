@@ -1,15 +1,12 @@
 {
-  "name": "stack-queue-pseudo",
+  "name": "stack-queue-animal-shelter",
   "version": "1.0.0",
-  "description": "> This coding challenge is to implement a `Queue` using two `Stacks`.",
-  "main": "stack-queue-pseudo.js",
+  "description": "> This coding challenge is to create a class called AnimalShelter which holds only dogs and cats.",
+  "main": "stack-queue-animal-shelter.js",
   "scripts": {
-    "test": "jest --coverage --verbose"
+    "test": "jest --verbose --coverage"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "jest": "^29.7.0"
-  }
+  "license": "ISC"
 }

@@ -1,9 +1,9 @@
 # Challenge Title
-## Stack Queue Pseudo
-> This coding challenge is to implement a `Queue` using two `Stacks`.
+## Stack Queue Animal Shelter
+> This coding challenge is to create a class called AnimalShelter which holds only dogs and cats.
 
 ### Whiteboard Process
-![Stack Queue Pseudo](../images/stack-queue-pseudo.png)
+![Stack Queue Animal Shelter](../images/stack-queue-animal-shelter.png)
 
 ### Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
@@ -17,9 +17,9 @@
 
 ### Solution
 <!-- Show how to run your code, and examples of it in action -->
-[Link to code](https://github.com/cleecoloma/data-structures-and-algorithms/tree/main/javascript/stack-queue-pseudo)
+[Link to code](https://github.com/cleecoloma/data-structures-and-algorithms/tree/main/javascript/stack-queue-animal-shelter)
 ```text
 npm test
 ```
-![Stack Queue Pseudo](../images/stack-and-queue-test.png)
+![Stack Queue Animal Shelter](../images/stack-queue-animal-shelter-test.png)
 
