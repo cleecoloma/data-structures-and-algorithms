@@ -8,12 +8,12 @@
 ### Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 
-1. Enqueue(value)
+1. Enqueue(animal)
   * Time Complexity - O(1)
   * Space Complexity - O(1)
-1. Dequeue()
+1. Dequeue(pref)
   * Time Complexity - O(n)
-  * Space Complexity - O(n)
+  * Space Complexity - O(1)
 
 ### Solution
 <!-- Show how to run your code, and examples of it in action -->
