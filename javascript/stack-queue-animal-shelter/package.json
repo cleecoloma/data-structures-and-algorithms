@@ -1,0 +1,12 @@
+{
+  "name": "stack-queue-animal-shelter",
+  "version": "1.0.0",
+  "description": "> This coding challenge is to create a class called AnimalShelter which holds only dogs and cats.",
+  "main": "stack-queue-animal-shelter.js",
+  "scripts": {
+    "test": "jest --verbose --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
