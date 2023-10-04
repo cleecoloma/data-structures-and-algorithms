@@ -14,6 +14,7 @@
 | [Class-08](./javascript/linked-list-zip/README.md) | Linked List Zip |
 | [Class-10](./javascript/stack-and-queue/README.md) | Stack And Queue |
 | [Class-11](./javascript/stack-queue-pseudo/README.md) | Stack Queue Pseudo |
+| [Class-12](./javascript/stack-queue-animal-shelter/README.md) | Stack Queue Animal Shelter |
 
 ---
 
