@@ -1,38 +1,50 @@
 'use strict';
 
-const StackQueuePseudo = require("../stack-queue-pseudo.js");
+const StackQueueAnimalShelter = require("../stack-queue-animal-shelter.js");
 
-describe("StackQueuePseudo", () => {
-  let stackQueuePseudo;
+describe("StackQueueAnimalShelter", () => {
+  let shelter;
 
   beforeEach(() => {
-    stackQueuePseudo = new StackQueuePseudo();
+    shelter = new StackQueueAnimalShelter();
   });
 
-  it("should enqueue and dequeue elements correctly", () => {
-    stackQueuePseudo.enqueue(1);
-    stackQueuePseudo.enqueue(2);
-    stackQueuePseudo.enqueue(3);
+  it("should enqueue and dequeue dogs and cats correctly", () => {
+    shelter.enqueue({ species: "dog", name: "Buddy" });
+    shelter.enqueue({ species: "cat", name: "Whiskers" });
+    shelter.enqueue({ species: "dog", name: "Rex" });
 
-    expect(stackQueuePseudo.dequeue()).toBe(1);
-    expect(stackQueuePseudo.dequeue()).toBe(2);
-    expect(stackQueuePseudo.dequeue()).toBe(3);
+    expect(shelter.dequeue("cat")).toEqual({
+      species: "cat",
+      name: "Whiskers",
+    });
+    expect(shelter.dequeue("dog")).toEqual({ species: "dog", name: "Buddy" });
+    expect(shelter.dequeue("dog")).toEqual({ species: "dog", name: "Rex" });
   });
 
   it("should handle enqueuing after dequeuing", () => {
-    stackQueuePseudo.enqueue(1);
-    expect(stackQueuePseudo.dequeue()).toBe(1);
+    shelter.enqueue({ species: "dog", name: "Buddy" });
+    expect(shelter.dequeue("dog")).toEqual({ species: "dog", name: "Buddy" });
 
-    stackQueuePseudo.enqueue(2);
-    stackQueuePseudo.enqueue(3);
+    shelter.enqueue({ species: "cat", name: "Whiskers" });
+    shelter.enqueue({ species: "dog", name: "Rex" });
 
-    expect(stackQueuePseudo.dequeue()).toBe(2);
-    expect(stackQueuePseudo.dequeue()).toBe(3);
+    expect(shelter.dequeue("cat")).toEqual({
+      species: "cat",
+      name: "Whiskers",
+    });
+    expect(shelter.dequeue("dog")).toEqual({ species: "dog", name: "Rex" });
   });
 
-  it("should throw an error when dequeuing from an empty queue", () => {
-    expect(() => {
-      stackQueuePseudo.dequeue();
-    }).toThrow("Stack is empty");
+  it("should return null when dequeuing from an empty queue", () => {
+    expect(shelter.dequeue("cat")).toBeNull();
+    expect(shelter.dequeue("dog")).toBeNull();
+  });
+
+  it("should return null when dequeuing with an invalid preference", () => {
+    shelter.enqueue({ species: "dog", name: "Buddy" });
+    shelter.enqueue({ species: "cat", name: "Whiskers" });
+
+    expect(shelter.dequeue("rabbit")).toBeNull();
   });
 });
