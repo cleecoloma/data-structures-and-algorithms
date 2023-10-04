@@ -36,9 +36,9 @@ describe("StackQueueAnimalShelter", () => {
     expect(shelter.dequeue("dog")).toEqual({ species: "dog", name: "Rex" });
   });
 
-  it("should return null when dequeuing from an empty queue", () => {
-    expect(shelter.dequeue("cat")).toBeNull();
-    expect(shelter.dequeue("dog")).toBeNull();
+  it("should throw an error when dequeuing from an empty queue", () => {
+    expect(() => {shelter.dequeue("cat");}).toThrow("Stack is empty");
+    expect(() => {shelter.dequeue("dog");}).toThrow("Stack is empty");
   });
 
   it("should return null when dequeuing with an invalid preference", () => {
