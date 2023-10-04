@@ -1,28 +1,42 @@
-'use strict';
+"use strict";
 
-const Stack = require('../stack-and-queue/stack.js');
+const Stack = require("../stack-and-queue/stack.js");
 
-class StackQueuePseudo {
+class StackQueueAnimalShelter {
   constructor() {
-    this.stack1 = new Stack();
-    this.stack2 = new Stack();
+    this.dogEnqueueStack = new Stack();
+    this.dogDequeueStack = new Stack();
+    this.catEnqueueStack = new Stack();
+    this.catDequeueStack = new Stack();
   }
 
-  enqueue(value) {
-    this.stack1.push(value);
+  enqueue(animal) {
+    if (animal.species === "dog") {
+      this.dogEnqueueStack.push(animal);
+    } else if (animal.species === "cat") {
+      this.catEnqueueStack.push(animal);
+    }
   }
 
-  dequeue() {
-    if (this.stack2.isEmpty()) {
-      while (!this.stack1.isEmpty()) {
-        this.stack2.push(this.stack1.pop());
+  dequeue(pref) {
+    if (pref === "dog") {
+      if (this.dogDequeueStack.isEmpty()) {
+        while (!this.dogEnqueueStack.isEmpty()) {
+          this.dogDequeueStack.push(this.dogEnqueueStack.pop());
+        }
       }
+      return this.dogDequeueStack.pop();
+    } else if (pref === "cat") {
+      if (this.catDequeueStack.isEmpty()) {
+        while (!this.catEnqueueStack.isEmpty()) {
+          this.catDequeueStack.push(this.catEnqueueStack.pop());
+        }
+      }
+      return this.catDequeueStack.pop();
+    } else {
+      return null;
     }
-    if (this.stack2.isEmpty()) {
-      throw new Error("Stack is empty");
-    }
-    return this.stack2.pop();
   }
 }
 
-module.exports = StackQueuePseudo;
+module.exports = StackQueueAnimalShelter;
