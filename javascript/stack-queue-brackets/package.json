@@ -1,0 +1,12 @@
+{
+  "name": "stack-queue-brackets",
+  "version": "1.0.0",
+  "description": "This coding challenge is to create a function that validates whether or not the brackets in the string are balanced.",
+  "main": "stack-queue-brackets.js",
+  "scripts": {
+    "test": "jest --verbose --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
