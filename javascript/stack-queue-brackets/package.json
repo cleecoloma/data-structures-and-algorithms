@@ -1,8 +1,8 @@
 {
-  "name": "stack-queue-animal-shelter",
+  "name": "stack-queue-brackets",
   "version": "1.0.0",
-  "description": "> This coding challenge is to create a class called AnimalShelter which holds only dogs and cats.",
-  "main": "stack-queue-animal-shelter.js",
+  "description": "This coding challenge is to create a function that validates whether or not the brackets in the string are balanced.",
+  "main": "stack-queue-brackets.js",
   "scripts": {
     "test": "jest --verbose --coverage"
   },
