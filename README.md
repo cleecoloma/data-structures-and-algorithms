@@ -16,6 +16,7 @@
 | [Class-11](./javascript/stack-queue-pseudo/README.md) | Stack Queue Pseudo |
 | [Class-12](./javascript/stack-queue-animal-shelter/README.md) | Stack Queue Animal Shelter |
 | [Class-13](./javascript/stack-queue-brackets/README.md) | Stack Queue Brackets |
+| [Class-15](./javascript/trees/README.md) | Trees |
 
 ---
 
