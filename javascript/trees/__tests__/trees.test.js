@@ -1,4 +1,4 @@
-const { BinaryTree, BinarySearchTree } = require("./your-binary-tree-file"); // Import your BinaryTree and BinarySearchTree classes here
+const { BinaryTree, BinarySearchTree } = require("../trees.js"); // Import your BinaryTree and BinarySearchTree classes here
 
 describe("BinaryTree and BinarySearchTree Tests", () => {
   let binaryTree;

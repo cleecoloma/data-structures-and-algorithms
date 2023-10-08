@@ -44,7 +44,7 @@ class BinaryTree {
       order.push(current.value);
 
       if (current.right) {
-        traverse(this.right);
+        traverse(current.right);
       }
     };
 
@@ -125,4 +125,9 @@ class BinarySearchTree extends BinaryTree {
 
     return this.search(node.right, value);
   }
+}
+
+module.exports = {
+  BinaryTree,
+  BinarySearchTree,
 }
