@@ -73,3 +73,56 @@ class BinaryTree {
     return order;
   }
 }
+
+
+class BinarySearchTree extends BinaryTree {
+  constructor() {
+    super();
+  }
+
+  add(value) {
+    const newNode = new Node(value);
+
+    if (!this.root) {
+      this.root = newNode;
+    } else {
+      this.insertNode(this.root, newNode);
+    }
+  }
+
+  insertNode(node, newNode) {
+    if (newNode.value < node.value) {
+      if (!node.left) {
+        node.left = newNode;
+      } else {
+        this.insertNode(node.left. newNode);
+      }
+    } else {
+      if (!node.right) {
+        node.right = newNode;
+      } else {
+        this.insertNode(node.right, newNode);
+      }
+    }
+  }
+
+  contains(value) {
+    return this.search (this.root, value);
+  }
+
+  search(node, value) {
+    if (!node) {
+      return false;
+    }
+
+    if (value === node.value) {
+      return true;
+    }
+
+    if (value < node.value) {
+      return this.search(node.left, value);
+    }
+
+    return this.search(node.right, value);
+  }
+}
