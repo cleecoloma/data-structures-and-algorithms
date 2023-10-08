@@ -3,12 +3,28 @@
 > This coding challenge is to implement tress. Create Node, Binary Tree, and Binary Search Tree.
 
 ### Whiteboard Process
-![Trees](../images/treess.png)
+![Trees](../images/trees.png)
 
 ### Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 
-1. Binary Search Tree
+1. add(value)
+  * Time Complexity - O(n)
+  * Space Complexity - O(1)
+
+2. contains(value)
+  * Time Complexity - O(n)
+  * Space Complexity - O(1)
+
+3. preOrder()
+  * Time Complexity - O(n)
+  * Space Complexity - O(n)
+
+4. inOrder()
+  * Time Complexity - O(n)
+  * Space Complexity - O(n)
+
+5. postOrder()
   * Time Complexity - O(n)
   * Space Complexity - O(n)
 
@@ -18,5 +34,8 @@
 ```text
 npm test
 ```
-![Stack Queue Brackets](../images/trees-test.png)
+![Trees Test](../images/trees-test.png)
 
+### Collaborators
+Chester Lee Coloma
+ChatGTP (tests)
