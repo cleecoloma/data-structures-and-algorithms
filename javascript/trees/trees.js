@@ -107,7 +107,7 @@ class BinarySearchTree extends BinaryTree {
   }
 
   contains(value) {
-    return this.search (this.root, value);
+    return this.search(this.root, value);
   }
 
   search(node, value) {
