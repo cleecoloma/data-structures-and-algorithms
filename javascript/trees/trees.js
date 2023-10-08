@@ -44,13 +44,13 @@ class BinaryTree {
       order.push(current.value);
 
       if (current.right) {
-        traverse(this.root);
+        traverse(this.right);
       }
-
-      traverse(this.root);
-
-      return order;
     };
+
+    traverse(this.root);
+
+    return order;
   }
 
   postOrder() {
