@@ -9,29 +9,9 @@
 ### Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 
-1. add(value)
+1. breadthFirst(tree)
   * Time Complexity - O(n)
   * Space Complexity - O(1)
-
-2. contains(value)
-  * Time Complexity - O(n)
-  * Space Complexity - O(1)
-
-3. preOrder()
-  * Time Complexity - O(n)
-  * Space Complexity - O(n)
-
-4. inOrder()
-  * Time Complexity - O(n)
-  * Space Complexity - O(n)
-
-5. postOrder()
-  * Time Complexity - O(n)
-  * Space Complexity - O(n)
-
-5. findMax()
-  * Time Complexity - O(n)
-  * Space Complexity - O(n)
 
 ### Solution
 <!-- Show how to run your code, and examples of it in action -->
