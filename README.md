@@ -18,6 +18,7 @@
 | [Class-13](./javascript/stack-queue-brackets/README.md) | Stack Queue Brackets |
 | [Class-15](./javascript/trees/README.md) | Trees |
 | [Class-16](./javascript/trees/README.md) | Trees - findMax |
+| [Class-17](./javascript/trees-breadth-first/README.md) | Trees - breadthFirst |
 
 ---
 

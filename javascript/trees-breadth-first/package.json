@@ -1,0 +1,14 @@
+{
+  "name": "trees-breadth-first",
+  "version": "1.0.0",
+  "description": "> This coding challenge is to implement trees method breadth first where it takes in tree and returns a list of values encountered in the tree.",
+  "main": "trees-breadth-first.js",
+  "scripts": {
+    "test": "jest --coverage --verbose"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^29.7.0"
+  }
+}
