@@ -15,13 +15,13 @@
 
 ### Solution
 <!-- Show how to run your code, and examples of it in action -->
-[Link to code](https://github.com/cleecoloma/data-structures-and-algorithms/tree/main/javascript/trees)
+[Link to code](https://github.com/cleecoloma/data-structures-and-algorithms/tree/main/javascript/trees-breadth-first)
 ```text
 npm test
 ```
 
-1. ![Trees Test](../images/trees-test.png)
-2. ![Trees findMax Test](../images/tree-max-test.png)
+### Test
+![Trees Breadth First](../images/trees-breadth-first-test.png)
 
 ### Collaborators
 Chester Lee Coloma
