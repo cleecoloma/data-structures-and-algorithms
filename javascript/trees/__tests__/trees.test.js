@@ -79,4 +79,23 @@ describe("BinaryTree and BinarySearchTree Tests", () => {
     expect(binarySearchTree.contains(15)).toBe(true);
     expect(binarySearchTree.contains(20)).toBe(false);
   });
+
+  // Test 8: Can successfully return max value for findMax method
+  test("Can successfully return max value for findMax method", () => {
+    binaryTree.root = {
+      value: 10,
+      left: {
+        value: 5,
+        left: { value: 3, left: null, right: null },
+        right: { value: 7, left: null, right: null },
+      },
+      right: {
+        value: 15,
+        left: { value: 12, left: null, right: null },
+        right: { value: 20, left: null, right: null },
+      },
+    };
+
+    expect(binaryTree.findMax()).toEqual(20);
+  });
 });

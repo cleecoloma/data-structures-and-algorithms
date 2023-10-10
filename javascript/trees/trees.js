@@ -72,6 +72,32 @@ class BinaryTree {
 
     return order;
   }
+
+  findMax() {
+    if (!this.root) {
+      return null;
+    }
+
+    let maxValue = this.root.value;
+
+    const traverse = (current) => {
+      if (current.value > maxValue) {
+        maxValue = current.value;
+      }
+
+      if (current.left) {
+        traverse(current.left);
+      }
+
+      if (current.right) {
+        traverse(current.right);
+      }
+    };
+
+    traverse(this.root);
+
+    return maxValue;
+  }
 }
 
 
