@@ -11,7 +11,7 @@
 
 1. breadthFirst(tree)
   * Time Complexity - O(n)
-  * Space Complexity - O(1)
+  * Space Complexity - O(n)
 
 ### Solution
 <!-- Show how to run your code, and examples of it in action -->
