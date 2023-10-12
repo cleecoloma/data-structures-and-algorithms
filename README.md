@@ -19,6 +19,7 @@
 | [Class-15](./javascript/trees/README.md) | Trees |
 | [Class-16](./javascript/trees/README.md) | Trees - findMax |
 | [Class-17](./javascript/trees-breadth-first/README.md) | Trees - breadthFirst |
+| [Class-18](./javascript/tree-fizz-buzz/README.md) | Trees - Fizz Buzz |
 
 ---
 
