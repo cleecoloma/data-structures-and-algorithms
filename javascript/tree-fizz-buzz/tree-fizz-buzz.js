@@ -1,27 +1,31 @@
 'use strict';
 
-function breadthFirst(tree) {
-  if (!tree) {
-    return [];
+function fizzBuzzTree(root) {
+  if (!root) {
+    return null;
   }
 
-  const result = [];
-  const queue = [tree];
-
-  while (queue.length > 0) {
-    const currentNode = queue.shift();
-    result.push(currentNode.value);
-
-    if (currentNode.left) {
-      queue.push(currentNode.left);
+  const fizzBuzzValue = (value) => {
+    if (value % 3 === 0 && value % 5 === 0) {
+      return "FizzBuzz";
+    } else if (value % 3 === 0) {
+      return "Fizz";
+    } else if (value % 5 === 0) {
+      return "Buzz";
+    } else {
+      return value.toString();
     }
+  };
 
-    if (currentNode.right) {
-      queue.push(currentNode.right);
+  const traverse = (node) => {
+    const newNode = new TreeNode(fizzBuzzValue(node.value));
+    for (const child of node.children) {
+      newNode.children.push(traverse(child));
     }
-  }
+    return newNode;
+  };
 
-  return result;
+  return traverse(root);
 }
 
 module.exports = breadthFirst;
