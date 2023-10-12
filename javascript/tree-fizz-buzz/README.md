@@ -1,26 +1,26 @@
 # Challenge Title
 ## Tree Fizz Buzz
-> This coding challenge is to implement trees method breadth first where it takes in tree and returns a list of values encountered in the tree.
+> This coding challenge is to conduct “FizzBuzz” on a k-ary tree while traversing through it to create a new tree. Set the values of each of the new nodes depending on the corresponding node value in the source tree.
 
 ### Whiteboard Process
-![Trees Breadth First](../images/trees-breadth-first.png)
+![Tree Fizz Buzz](../images/tree-fizz-buzz.png)
 
 ### Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 
-1. breadthFirst(tree)
+1. fizzBuzzTree(tree)
   * Time Complexity - O(n)
   * Space Complexity - O(n)
 
 ### Solution
 <!-- Show how to run your code, and examples of it in action -->
-[Link to code](https://github.com/cleecoloma/data-structures-and-algorithms/tree/main/javascript/trees-breadth-first)
+[Link to code](https://github.com/cleecoloma/data-structures-and-algorithms/tree/main/javascript/tree-fizz-buzz)
 ```text
 npm test
 ```
 
 ### Test
-![Trees Breadth First](../images/trees-breadth-first-test.png)
+![Trees Breadth First](../images/tree-fizz-buzz-test.png)
 
 ### Collaborators
 Chester Lee Coloma

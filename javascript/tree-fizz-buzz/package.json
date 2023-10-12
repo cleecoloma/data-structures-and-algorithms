@@ -1,0 +1,15 @@
+{
+  "name": "tree-fizz-buzz",
+  "version": "1.0.0",
+  "description": "> This coding challenge is to conduct “FizzBuzz” on a k-ary tree while traversing through it to create a new tree. Set the values of each of the new nodes depending on the corresponding node value in the source tree.",
+  "main": "tree-fizz-buzz.js",
+  "scripts": {
+    "test": "jest --coverage --verbose"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^29.7.0"
+  }
+}
