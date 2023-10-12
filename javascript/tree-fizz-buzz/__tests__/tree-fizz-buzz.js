@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 const { fizzBuzzTree, TreeNode } = require("../tree-fizz-buzz.js");
 
@@ -30,7 +30,6 @@ describe("FizzBuzz Tree", () => {
       const values = [node.value];
       for (const child of node.children) {
         values.push(...collectTreeValues(child));
-        console.log("Here are the values : ", values)
       }
       return values;
     };
