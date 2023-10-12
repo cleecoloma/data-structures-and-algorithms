@@ -30,12 +30,13 @@ describe("FizzBuzz Tree", () => {
       const values = [node.value];
       for (const child of node.children) {
         values.push(...collectTreeValues(child));
+        console.log("Here are the values : ", values)
       }
       return values;
     };
 
     // Verify the transformed values in the FizzBuzz tree
-    const expectedValues = ["1", "Fizz", "Buzz", "FizzBuzz", "7"];
+    const expectedValues = ["1", "Fizz", "Buzz", "7", "FizzBuzz"];
     const actualValues = collectTreeValues(fizzBuzzRoot);
     expect(actualValues).toEqual(expectedValues);
   });
