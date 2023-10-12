@@ -20,7 +20,7 @@ npm test
 ```
 
 ### Test
-![Trees Breadth First](../images/tree-fizz-buzz-test.png)
+![Tree Fizz Buzz](../images/tree-fizz-buzz-test.png)
 
 ### Collaborators
 Chester Lee Coloma
