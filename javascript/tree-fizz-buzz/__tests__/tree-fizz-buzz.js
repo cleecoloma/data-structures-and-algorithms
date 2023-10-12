@@ -1,36 +1,42 @@
 'use strict';
 
-const { BinaryTree } = require('../../trees/trees.js');
-const breadthFirst = require('../trees-breadth-first.js');
+const { fizzBuzzTree, TreeNode } = require("../tree-fizz-buzz.js");
 
-describe('Test Trees Breadth First Method', () => {
-  let binaryTree;
-
-  beforeEach(() => {
-    binaryTree = new BinaryTree();
+describe("FizzBuzz Tree", () => {
+  test("should return null for null root", () => {
+    const root = null;
+    const fizzBuzzRoot = fizzBuzzTree(root);
+    expect(fizzBuzzRoot).toBeNull();
   });
 
-  // Test 1: Can successfully return an empty array when tree is empty
-  test('Can successfully return an empty array when tree is empty', () => {
-    expect(breadthFirst(null)).toEqual([]);
-  });
+  test("should correctly transform the tree in the happy path", () => {
+    // Create a sample k-ary tree
+    const root = new TreeNode(1);
+    const node2 = new TreeNode(3);
+    const node3 = new TreeNode(5);
+    const node4 = new TreeNode(15);
+    const node5 = new TreeNode(7);
 
-  // Test 2: Can successfully return list of all values in the tree
-  test('Can successfully return list of all values in the tree', () => {
-    binaryTree.root = {
-      value: 10,
-      left: {
-        value: 5,
-        left: { value: 3, left: null, right: null },
-        right: { value: 7, left: null, right: null },
-      },
-      right: {
-        value: 15,
-        left: { value: 12, left: null, right: null },
-        right: { value: 20, left: null, right: null },
-      },
+    root.children.push(node2);
+    root.children.push(node3);
+    root.children.push(node4);
+    node3.children.push(node5);
+
+    const fizzBuzzRoot = fizzBuzzTree(root);
+
+    // Define a helper function to traverse the tree and collect values
+    const collectTreeValues = (node) => {
+      if (!node) return [];
+      const values = [node.value];
+      for (const child of node.children) {
+        values.push(...collectTreeValues(child));
+      }
+      return values;
     };
 
-    expect(breadthFirst(binaryTree.root)).toEqual([10, 5, 15, 3, 7, 12, 20]);
+    // Verify the transformed values in the FizzBuzz tree
+    const expectedValues = ["1", "Fizz", "Buzz", "FizzBuzz", "7"];
+    const actualValues = collectTreeValues(fizzBuzzRoot);
+    expect(actualValues).toEqual(expectedValues);
   });
 });

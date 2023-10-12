@@ -1,4 +1,11 @@
-'use strict';
+"use strict";
+
+class TreeNode {
+  constructor(value) {
+    this.value = value;
+    this.children = [];
+  }
+}
 
 function fizzBuzzTree(root) {
   if (!root) {
@@ -28,4 +35,4 @@ function fizzBuzzTree(root) {
   return traverse(root);
 }
 
-module.exports = breadthFirst;
+module.exports = { fizzBuzzTree, TreeNode };
