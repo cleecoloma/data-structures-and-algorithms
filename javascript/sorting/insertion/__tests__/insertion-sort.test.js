@@ -1,36 +1,27 @@
 'use strict';
 
-const { BinaryTree } = require('../../trees/trees.js');
-const breadthFirst = require('../trees-breadth-first.js');
+const { InsertionSort } = require('../insertion-sort.js');
 
-describe('Test Trees Breadth First Method', () => {
-  let binaryTree;
+test('Insertion Sort should sort an array in ascending order', () => {
+  const unsortedArray = [5, 12, 7, 5, 5, 7];
+  const sortedArray = InsertionSort(unsortedArray);
+  const expectedArray = [5, 5, 5, 7, 7, 12];
 
-  beforeEach(() => {
-    binaryTree = new BinaryTree();
-  });
+  expect(sortedArray).toEqual(expectedArray);
+});
 
-  // Test 1: Can successfully return an empty array when tree is empty
-  test('Can successfully return an empty array when tree is empty', () => {
-    expect(breadthFirst(null)).toEqual([]);
-  });
+test('Insertion Sort should handle an empty array', () => {
+  const unsortedArray = [];
+  const sortedArray = InsertionSort(unsortedArray);
+  const expectedArray = [];
 
-  // Test 2: Can successfully return list of all values in the tree
-  test('Can successfully return list of all values in the tree', () => {
-    binaryTree.root = {
-      value: 10,
-      left: {
-        value: 5,
-        left: { value: 3, left: null, right: null },
-        right: { value: 7, left: null, right: null },
-      },
-      right: {
-        value: 15,
-        left: { value: 12, left: null, right: null },
-        right: { value: 20, left: null, right: null },
-      },
-    };
+  expect(sortedArray).toEqual(expectedArray);
+});
 
-    expect(breadthFirst(binaryTree.root)).toEqual([10, 5, 15, 3, 7, 12, 20]);
-  });
+test('Insertion Sort should handle an array with a single element', () => {
+  const unsortedArray = [42];
+  const sortedArray = InsertionSort(unsortedArray);
+  const expectedArray = [42];
+
+  expect(sortedArray).toEqual(expectedArray);
 });
