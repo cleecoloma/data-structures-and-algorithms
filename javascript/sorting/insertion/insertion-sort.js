@@ -1,6 +1,6 @@
 'use strict';
 
-function Insert(sorted, value) {
+function insert(sorted, value) {
   let i = 0;
 
   while (value > sorted[i]) {
@@ -17,17 +17,17 @@ function Insert(sorted, value) {
   sorted.push(value);
 }
 
-function InsertionSort(input) {
+function insertionSort(input) {
   const sorted = [input[0]];
 
   for (let i = 1; i < input.length; i++) {
-    Insert(sorted, input[i]);
+    insert(sorted, input[i]);
   }
 
   return sorted;
 }
 
 module.exports = {
-  Insert,
-  InsertionSort,
+  insert,
+  insertionSort,
 };
