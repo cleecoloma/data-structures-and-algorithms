@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 function insert(sorted, value) {
   let i = 0;
@@ -18,7 +18,12 @@ function insert(sorted, value) {
 }
 
 function insertionSort(input) {
-  const sorted = [input[0]];
+  if (input.length === 0) {
+    return [];
+  }
+
+  let sorted = [];
+  sorted[0] = input[0];
 
   for (let i = 1; i < input.length; i++) {
     insert(sorted, input[i]);
