@@ -1,8 +1,8 @@
 {
-  "name": "insertion",
+  "name": "merge",
   "version": "1.0.0",
   "description": "",
-  "main": "insertion-sort.js",
+  "main": "merge-sort.js",
   "scripts": {
     "test": "jest --coverage --verbose"
   },

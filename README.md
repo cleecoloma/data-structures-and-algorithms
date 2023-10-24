@@ -21,6 +21,7 @@
 | [Class-17](./javascript/trees-breadth-first/README.md) | Trees - breadthFirst |
 | [Class-18](./javascript/tree-fizz-buzz/README.md) | Trees - Fizz Buzz |
 | [Class-26](./javascript/sorting/insertion/README.md) | Insertion Sort |
+| [Class-27](./javascript/sorting/merge/README.md) | Merge Sort |
 
 ---
 
