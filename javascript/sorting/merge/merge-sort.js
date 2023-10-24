@@ -1,38 +1,33 @@
 "use strict";
 
-function insert(sorted, value) {
-  let i = 0;
-
-  while (value > sorted[i]) {
-    i++;
+function mergeSort(arr) {
+  if (arr.length <= 1) {
+    return arr; 
   }
 
-  while (i < sorted.length) {
-    const temp = sorted[i];
-    sorted[i] = value;
-    value = temp;
-    i++;
-  }
+  const mid = Math.floor(arr.length / 2);
+  const left = arr.slice(0, mid);
+  const right = arr.slice(mid);
 
-  sorted.push(value);
+  return merge(mergeSort(left), mergeSort(right));
 }
 
-function insertionSort(input) {
-  if (input.length === 0) {
-    return [];
+function merge(left, right) {
+  let result = [];
+  let leftIndex = 0;
+  let rightIndex = 0;
+
+  while (leftIndex < left.length && rightIndex < right.length) {
+    if (left[leftIndex] < right[rightIndex]) {
+      result.push(left[leftIndex]);
+      leftIndex++;
+    } else {
+      result.push(right[rightIndex]);
+      rightIndex++;
+    }
   }
 
-  let sorted = [];
-  sorted[0] = input[0];
-
-  for (let i = 1; i < input.length; i++) {
-    insert(sorted, input[i]);
-  }
-
-  return sorted;
+  return result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex));
 }
 
-module.exports = {
-  insert,
-  insertionSort,
-};
+module.exports = mergeSort;
