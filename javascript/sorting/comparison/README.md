@@ -2,9 +2,6 @@
 ## Sort Comparison
 > This coding challenge is to implement comparison sort that takes in an array of movie objects and sorts them based on either the year or the title.
 
-### Whiteboard Process
-![Sort Comparison](../../images/sort-comparison.png)
-
 ### Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 
