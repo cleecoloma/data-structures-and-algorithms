@@ -25,5 +25,5 @@ npm test
 ![Sort Comparison](../../images/sort-comparison-test.png)
 
 ### Collaborators
-Chester Lee Coloma
-ChatGTP (tests)
+* Chester Lee Coloma
+* ChatGTP (tests)
