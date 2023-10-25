@@ -14,9 +14,7 @@ function sortByYear(movies) {
 
 function sortByTitle(movies) {
   return movies.sort((a, b) => {
-    const titleA = a.title.replace(/^(A |An |The )/i, "");
-    const titleB = b.title.replace(/^(A |An |The )/i, "");
-    return titleA.localeCompare(titleB);
+    return a.title.localeCompare(b.title);
   });
 }
 
