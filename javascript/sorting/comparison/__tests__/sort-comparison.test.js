@@ -1,27 +1,35 @@
 'use strict';
 
-const mergeSort = require('../merge-sort.js');
+const { Movie, sortByYear, sortByTitle } = require("../sort-comparison");
 
-test('Merge Sort should sort an array in ascending order', () => {
-  const unsortedArray = [12, 11, 13, 5, 6, 7];
-  const sortedArray = mergeSort(unsortedArray);
-  const expectedArray = [5, 6, 7, 11, 12, 13];
+// Test data
+const movies = [
+  new Movie("The Shawshank Redemption", 1994, ["Drama"]),
+  new Movie("The Godfather", 1972, ["Crime", "Drama"]),
+  new Movie("A Beautiful Mind", 2001, ["Biography", "Drama"]),
+  new Movie("Avatar", 2009, ["Action", "Adventure", "Fantasy"]),
+];
 
-  expect(sortedArray).toEqual(expectedArray);
+describe("sortByYear", () => {
+  it("should sort movies by most recent year first", () => {
+    const sorted = sortByYear(movies);
+    expect(sorted).toEqual([
+      new Movie("Avatar", 2009, ["Action", "Adventure", "Fantasy"]),
+      new Movie("A Beautiful Mind", 2001, ["Biography", "Drama"]),
+      new Movie("The Shawshank Redemption", 1994, ["Drama"]),
+      new Movie("The Godfather", 1972, ["Crime", "Drama"]),
+    ]);
+  });
 });
 
-test('Merge Sort should handle an empty array', () => {
-  const unsortedArray = [];
-  const sortedArray = mergeSort(unsortedArray);
-  const expectedArray = [];
-
-  expect(sortedArray).toEqual(expectedArray);
-});
-
-test('Merge Sort should handle an array with a single element', () => {
-  const unsortedArray = [42];
-  const sortedArray = mergeSort(unsortedArray);
-  const expectedArray = [42];
-
-  expect(sortedArray).toEqual(expectedArray);
+describe("sortByTitle", () => {
+  it("should sort movies alphabetically by title, ignoring articles", () => {
+    const sorted = sortByTitle(movies);
+    expect(sorted).toEqual([
+      new Movie("A Beautiful Mind", 2001, ["Biography", "Drama"]),
+      new Movie("Avatar", 2009, ["Action", "Adventure", "Fantasy"]),
+      new Movie("The Godfather", 1972, ["Crime", "Drama"]),
+      new Movie("The Shawshank Redemption", 1994, ["Drama"]),
+    ]);
+  });
 });

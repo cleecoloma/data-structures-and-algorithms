@@ -1,6 +1,6 @@
 # Challenge Title
 ## Sort Comparison
-> This coding challenge is to implement merge sort that divides an unsorted array into equal halves, sorts them, and then merges them to produce a fully sorted list.
+> This coding challenge is to implement comparison sort that takes in an array of movie objects and sorts them based on either the year or the title.
 
 ### Whiteboard Process
 ![Sort Comparison](../../images/sort-comparison.png)
