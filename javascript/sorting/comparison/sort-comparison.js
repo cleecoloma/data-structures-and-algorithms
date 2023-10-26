@@ -1,21 +1,15 @@
 "use strict";
 
-class Movie {
-  constructor(title, year, genres) {
-    this.title = title;
-    this.year = year;
-    this.genres = genres;
-  }
+function sortYear(movies) {
+  return movies.sort((a, b) => a.year - b.year);
 }
 
-function sortByYear(movies) {
-  return movies.sort((a, b) => b.year - a.year);
-}
-
-function sortByTitle(movies) {
+function sortTitle(movies) {
   return movies.sort((a, b) => {
-    return a.title.localeCompare(b.title);
+    const titleA = a.title.replace(/^The /i, "");
+    const titleB = b.title.replace(/^The /i, "");
+    return titleA.localeCompare(titleB);
   });
 }
 
-module.exports = { Movie, sortByYear, sortByTitle };
+module.exports = { sortYear, sortTitle };
