@@ -1,12 +1,14 @@
 "use strict";
 
 function sortYear(movies) {
-  return movies.sort((a, b) => b.year - a.year);
+  return movies.sort((a, b) => a.year - b.year);
 }
 
 function sortTitle(movies) {
   return movies.sort((a, b) => {
-    return a.title.localeCompare(b.title);
+    const titleA = a.title.replace(/^The /i, "");
+    const titleB = b.title.replace(/^The /i, "");
+    return titleA.localeCompare(titleB);
   });
 }
 
