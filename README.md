@@ -22,6 +22,7 @@
 | [Class-18](./javascript/tree-fizz-buzz/README.md) | Trees - Fizz Buzz |
 | [Class-26](./javascript/sorting/insertion/README.md) | Insertion Sort |
 | [Class-27](./javascript/sorting/merge/README.md) | Merge Sort |
+| [Class-28](./javascript/sorting/comparison/README.md) | Sort Comparison |
 
 ---
 
