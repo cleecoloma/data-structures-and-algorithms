@@ -7,6 +7,7 @@ class HashTable {
     this.size = size;
     this.buckets = new Array(size);
   }
+
   hash(key) {
     let string = JSON.stringify(key);
     let sum = 0;
@@ -17,4 +18,18 @@ class HashTable {
     let hash = largeNum % this.size;
     return hash;
   }
+
+  set(key, value) {
+    let hash = this.hash(key);
+    let payload = `${key}:${value}`;
+    let values = this.buckets[hash];
+    if (!values) {
+      let list = new LinkedList();
+      list.add(payload);
+      this.buckets[hash] = list;
+    } else {
+      values.add(payload);
+    }
+  }
+  
 }
