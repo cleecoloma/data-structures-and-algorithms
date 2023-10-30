@@ -9,20 +9,17 @@
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 
 1. set(key, value)
-  * Time Complexity -
-  * Space Complexity -
+  * Time Complexity - O(n)
+  * Space Complexity - O(1)
 2. get(key)
-  * Time Complexity -
-  * Space Complexity -
+  * Time Complexity - O(n)
+  * Space Complexity - O(1)
 3. has(key)
-  * Time Complexity -
-  * Space Complexity -
+  * Time Complexity - O(n)
+  * Space Complexity - O(1)
 4. keys
-  * Time Complexity -
-  * Space Complexity -
-5. hash
-  * Time Complexity -
-  * Space Complexity -
+  * Time Complexity - O(n)
+  * Space Complexity - O(n)
 
 ### Solution
 <!-- Show how to run your code, and examples of it in action -->
