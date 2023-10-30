@@ -31,5 +31,15 @@ class HashTable {
       values.add(payload);
     }
   }
-  
+
+  get(key) {
+    let hash = this.hash(key);
+    let list = this.buckets[hash];
+    if (!list) {
+      console.log("NO VALUES PRESENT FOR GIVEN KEY");
+      return;
+    } else {
+      return list.values();
+    }
+  }
 }
