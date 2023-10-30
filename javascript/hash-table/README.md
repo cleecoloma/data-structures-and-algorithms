@@ -2,6 +2,9 @@
 ## Hash Table
 > This coding challenge is to implement hash table.
 
+### Whiteboard Process
+![Hash Table](../images/hash-table.png)
+
 ### Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 
@@ -27,7 +30,7 @@ npm test
 ```
 
 ### Test
-![Hash Table](../../images/hash-table-test.png)
+![Hash Table](../images/hash-table-test.png)
 
 ### Collaborators
 Chester Lee Coloma
