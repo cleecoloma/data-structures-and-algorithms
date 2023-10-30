@@ -1,6 +1,6 @@
 "use strict";
 
-const LinkedList = require('../linked-list');
+const { LinkedList } = require('../linked-list');
 
 class HashTable {
   constructor(size) {
@@ -25,7 +25,7 @@ class HashTable {
     let values = this.buckets[hash];
     if (!values) {
       let list = new LinkedList();
-      list.add(payload);
+      list.append(payload);
       this.buckets[hash] = list;
     } else {
       values.add(payload);
@@ -62,3 +62,5 @@ class HashTable {
     return allKeys;
   }
 }
+
+module.exports = HashTable;
