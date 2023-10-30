@@ -42,4 +42,23 @@ class HashTable {
       return list.values();
     }
   }
+
+  has(key) {
+    let hash = this.hash(key);
+    let list = this.buckets[hash];
+    return list ? true : false;
+  }
+
+  keys() {
+    let allKeys = [];
+    this.buckets.forEach((list) => {
+      if (list) {
+        list.each((node) => {
+          let [key, value] = node.split(":");
+          allKeys.push(key);
+        });
+      }
+    });
+    return allKeys;
+  }
 }
