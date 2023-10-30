@@ -20,27 +20,34 @@ class HashTable {
   }
 
   set(key, value) {
-    let hash = this.hash(key);
-    let payload = `${key}:${value}`;
-    let values = this.buckets[hash];
-    if (!values) {
-      let list = new LinkedList();
-      list.append(payload);
-      this.buckets[hash] = list;
-    } else {
-      values.add(payload);
+    const index = this.hash(key);
+    if (!this.buckets[index]) {
+      this.buckets[index] = [];
     }
+    for (let i = 0; i < this.buckets[index].length; i++) {
+      if (this.buckets[index][i].key === key) {
+        this.buckets[index][i].value = value;
+        return;
+      }
+    }
+    this.buckets[index].push({ key, value });
   }
 
   get(key) {
     let hash = this.hash(key);
-    let list = this.buckets[hash];
-    if (!list) {
+    if (!this.buckets[hash]) {
       console.log("NO VALUES PRESENT FOR GIVEN KEY");
-      return;
-    } else {
-      return list.values();
+      return null;
     }
+
+    for (let item of this.buckets[hash].values()) {
+      if (item.key === key) {
+        return item.value;
+      }
+    }
+
+    console.log("NO VALUES PRESENT FOR GIVEN KEY");
+    return null;
   }
 
   has(key) {
@@ -50,16 +57,26 @@ class HashTable {
   }
 
   keys() {
-    let allKeys = [];
-    this.buckets.forEach((list) => {
-      if (list) {
-        list.each((node) => {
-          let [key, value] = node.split(":");
-          allKeys.push(key);
-        });
+    const allKeys = [];
+    for (let index = 0; index < this.size; index++) {
+      if (this.buckets[index]) {
+        for (let i = 0; i < this.buckets[index].length; i++) {
+          allKeys.push(this.buckets[index][i].key);
+        }
       }
-    });
+    }
     return allKeys;
+  }
+
+  logAll() {
+    for (let index = 0; index < this.size; index++) {
+      if (this.buckets[index]) {
+        for (let i = 0; i < this.buckets[index].length; i++) {
+          const { key, value } = this.buckets[index][i];
+          console.log(`Key: ${key}, Value: ${value}`);
+        }
+      }
+    }
   }
 }
 

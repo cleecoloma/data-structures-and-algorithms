@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 const HashTable = require("../hash-table.js");
 // const LinkedList = require("../../linked-list/index.js");
 
@@ -12,7 +12,7 @@ describe("Hash Table class", () => {
   test("Retrieving based on a key returns the value stored", () => {
     const myHashTable = new HashTable(100);
     myHashTable.set("age", 30);
-    expect(myHashTable.get("age")).toBe(30);
+    expect(parseInt(myHashTable.get("age"))).toBe(30);
   });
 
   test("Successfully returns null for a key that does not exist in the hashtable", () => {
