@@ -1,0 +1,12 @@
+{
+  "name": "hash-table",
+  "version": "1.0.0",
+  "description": "> This coding challenge is to implement hash table.",
+  "main": "hash-table.js",
+  "scripts": {
+    "test": "jest --coverage --verbose"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
