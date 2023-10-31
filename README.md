@@ -25,6 +25,7 @@
 | [Class-28](./javascript/sorting/comparison/README.md) | Sort Comparison |
 | [Class-29](./javascript/hash-table/README.md) | Hash Table |
 | [Class-31](./javascript/hashmap-repeated-word/README.md) | Hash Map Repeated Word |
+| [Class-32](./javascript/tree-intersection/README.md) | Tree Intersection |
 
 ---
 
