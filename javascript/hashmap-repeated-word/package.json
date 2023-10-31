@@ -1,0 +1,15 @@
+{
+  "name": "hashmap-repeated-word",
+  "version": "1.0.0",
+  "description": "> This coding challenge is to write a function called repeated word that finds the first word to occur more than once in a string.",
+  "main": "hashmap-repeated-word.js",
+  "scripts": {
+    "test": "jest --coverage --verbose"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^29.7.0"
+  }
+}
