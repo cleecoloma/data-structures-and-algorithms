@@ -8,17 +8,11 @@
 ### Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 
-1. set(key, value)
+1. repeatedWord(string)
   * Time Complexity - O(n)
-  * Space Complexity - O(1)
-2. get(key)
-  * Time Complexity - O(n)
-  * Space Complexity - O(1)
-3. has(key)
-  * Time Complexity - O(n)
-  * Space Complexity - O(1)
-4. keys
-  * Time Complexity - O(n)
+  * Space Complexity - O(n)
+2. wordCountAndMostFrequentWords(key)
+  * Time Complexity - O(n log(n))
   * Space Complexity - O(n)
 
 ### Solution

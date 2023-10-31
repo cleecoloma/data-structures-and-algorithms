@@ -43,10 +43,10 @@ function wordCountAndMostFrequentWords(str, topN) {
   });
 
   // Sort wordCounts by count in descending order
-  // wordCounts.sort((a, b) => b.count - a.count);
+  wordCounts.sort((a, b) => b.count - a.count);
 
   // Get the top N most frequent words
-  const mostFrequentWords = wordCounts.sort((a, b) => b.count - a.count).slice(0, topN);
+  const mostFrequentWords = wordCounts.slice(0, topN);
 
   return {
     wordCounts,
