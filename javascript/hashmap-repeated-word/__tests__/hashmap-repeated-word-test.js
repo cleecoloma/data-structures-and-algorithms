@@ -1,4 +1,7 @@
-const repeatedWord = require("../hashmap-repeated-word.js");
+const {
+  repeatedWord,
+  wordCountAndMostFrequentWords
+} = require("../hashmap-repeated-word.js");
 
 describe("repeatedWord Function Tests", () => {
   it("Test 1: Should find the first repeated word", () => {
@@ -37,5 +40,62 @@ describe("repeatedWord Function Tests", () => {
     const input = "SingleWord";
     const result = repeatedWord(input);
     expect(result).toBe("No repeated word found");
+  });
+
+  it("Test 7: Should return word counts and most frequent words", () => {
+    const input = "Once upon a time, there was a brave princess who...";
+    const { wordCounts, mostFrequentWords } = wordCountAndMostFrequentWords(
+      input,
+      3
+    );
+
+    expect(wordCounts).toContainEqual({ word: "a", count: 2 });
+    expect(mostFrequentWords).toContainEqual({ word: "a", count: 2 });
+  });
+
+  it("Test 8: Should return word counts and most frequent words", () => {
+    const input =
+      "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness...";
+    const { wordCounts, mostFrequentWords } = wordCountAndMostFrequentWords(
+      input,
+      3
+    );
+
+    expect(wordCounts).toContainEqual({ word: "best", count: 1 }); // Updated expected value
+    expect(mostFrequentWords).toContainEqual({ word: "it", count: 4 }); // Corrected expectation
+  });
+
+
+  it("Test 9: Should handle an empty string", () => {
+    const input = "";
+    const { wordCounts, mostFrequentWords } = wordCountAndMostFrequentWords(
+      input,
+      3
+    );
+
+    expect(wordCounts).toEqual([]);
+    expect(mostFrequentWords).toEqual([]);
+  });
+
+  it("Test 10: Should handle a string with no words", () => {
+    const input = "!@#$%^&*()";
+    const { wordCounts, mostFrequentWords } = wordCountAndMostFrequentWords(
+      input,
+      3
+    );
+
+    expect(wordCounts).toEqual([]);
+    expect(mostFrequentWords).toEqual([]);
+  });
+
+  it("Test 11: Should return the top N most frequent words", () => {
+    const input = "apple apple banana banana cherry cherry";
+    const { wordCounts, mostFrequentWords } = wordCountAndMostFrequentWords(
+      input,
+      2
+    );
+
+    expect(wordCounts).toContainEqual({ word: "apple", count: 2 });
+    expect(mostFrequentWords).toContainEqual({ word: "apple", count: 2 });
   });
 });
