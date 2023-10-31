@@ -23,7 +23,8 @@
 | [Class-26](./javascript/sorting/insertion/README.md) | Insertion Sort |
 | [Class-27](./javascript/sorting/merge/README.md) | Merge Sort |
 | [Class-28](./javascript/sorting/comparison/README.md) | Sort Comparison |
-| [Class-28](./javascript/hash-table/README.md) | Hash Table |
+| [Class-29](./javascript/hash-table/README.md) | Hash Table |
+| [Class-31](./javascript/hashmap-repeated-word/README.md) | Hash Map Repeated Word |
 
 ---
 
