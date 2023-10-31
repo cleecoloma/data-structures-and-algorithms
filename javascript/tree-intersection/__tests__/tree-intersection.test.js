@@ -1,46 +1,52 @@
-const tree_intersection= require("../tree-intersection.js");
-const { Node } = require("../../trees/trees.js")
-
-// Helper function to create a binary tree from an array of values
-function createBinaryTree(values) {
-  if (!values.length) return null;
-  const root = new Node(values.shift());
-  const queue = [root];
-  while (values.length) {
-    const node = queue.shift();
-    const leftValue = values.shift();
-    if (leftValue !== null) {
-      node.left = new Node(leftValue);
-      queue.push(node.left);
-    }
-    const rightValue = values.shift();
-    if (rightValue !== null) {
-      node.right = new Node(rightValue);
-      queue.push(node.right);
-    }
-  }
-  return root;
-}
+const tree_intersection = require("../tree-intersection.js");
+const { Node } = require("../../trees/trees.js");
 
 describe("tree_intersection", () => {
   it("should return common values for two identical trees", () => {
-    const tree1 = createBinaryTree([1, 2, 3, 4, 5]);
-    const tree2 = createBinaryTree([1, 2, 3, 4, 5]);
+    const tree1 = new Node(1);
+    tree1.left = new Node(2);
+    tree1.right = new Node(3);
+    tree1.left.left = new Node(4);
+    tree1.left.right = new Node(5);
+
+    const tree2 = new Node(1);
+    tree2.left = new Node(2);
+    tree2.right = new Node(3);
+    tree2.left.left = new Node(4);
+    tree2.left.right = new Node(5);
+
     const commonValues = tree_intersection(tree1, tree2);
-    expect([...commonValues]).toEqual([1, 2, 3, 4, 5]);
+    expect(commonValues).toEqual([1, 2, 4, 5, 3]);
   });
 
-  it("should return an empty set for two trees with no common values", () => {
-    const tree1 = createBinaryTree([1, 2, 3]);
-    const tree2 = createBinaryTree([4, 5, 6]);
+  it("should return an empty array for two trees with no common values", () => {
+    const tree1 = new Node(1);
+    tree1.left = new Node(2);
+    tree1.right = new Node(3);
+
+    const tree2 = new Node(4);
+    tree2.left = new Node(5);
+    tree2.right = new Node(6);
+
     const commonValues = tree_intersection(tree1, tree2);
-    expect([...commonValues]).toEqual([]);
+    console.log("HERE'S MY COMMON VALUES #2 ", commonValues);
+    expect(commonValues).toEqual([]);
   });
 
   it("should return common values for two different trees", () => {
-    const tree1 = createBinaryTree([1, 2, 3, 4, 5]);
-    const tree2 = createBinaryTree([3, 4, 5, 6, 7]);
+    const tree1 = new Node(1);
+    tree1.left = new Node(2);
+    tree1.right = new Node(3);
+    tree1.left.left = new Node(4);
+    tree1.left.right = new Node(5);
+
+    const tree2 = new Node(3);
+    tree2.left = new Node(4);
+    tree2.right = new Node(5);
+    tree2.left.left = new Node(6);
+    tree2.left.right = new Node(7);
+
     const commonValues = tree_intersection(tree1, tree2);
-    expect([...commonValues]).toEqual([3, 4, 5]);
+    expect(commonValues).toEqual([3, 4, 5]);
   });
 });

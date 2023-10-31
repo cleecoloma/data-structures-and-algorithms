@@ -4,7 +4,7 @@ const HashTable = require("../hash-table/hash-table.js");
 
 // Function to find tree intersection
 function tree_intersection(tree1, tree2) {
-  const hashTable = new HashTable();
+  const hashTable = new HashTable(1054);
 
   // Helper function to traverse a binary tree and add its values to the hash table
   function addToHashTable(node) {
