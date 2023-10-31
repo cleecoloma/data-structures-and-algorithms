@@ -1,6 +1,6 @@
 "use strict";
 
-const { HashTable } = require("../hash-table/hash-table.js");
+const HashTable = require("../hash-table/hash-table.js");
 
 // Function to find tree intersection
 function tree_intersection(tree1, tree2) {
@@ -18,13 +18,13 @@ function tree_intersection(tree1, tree2) {
   // Add values from the first tree to the hash table
   addToHashTable(tree1);
 
-  const commonValues = new Set();
+  const commonValues = [];
 
   // Helper function to traverse the second tree and check for common values
   function findCommonValues(node) {
     if (node) {
       if (hashTable.has(node.value)) {
-        commonValues.add(node.value);
+        commonValues.push(node.value);
       }
       findCommonValues(node.left);
       findCommonValues(node.right);

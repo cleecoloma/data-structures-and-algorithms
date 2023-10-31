@@ -1,0 +1,12 @@
+{
+  "name": "tree-intersection",
+  "version": "1.0.0",
+  "description": "> This coding challenge is to write a function that takes in two binary trees as parameters and returns a set of values that are found in both trees.",
+  "main": "tree-intersection.js",
+  "scripts": {
+    "test": "jest --coverage --verbose"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
