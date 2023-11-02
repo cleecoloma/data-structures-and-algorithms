@@ -1,0 +1,15 @@
+{
+  "name": "hashmap-left-join",
+  "version": "1.0.0",
+  "description": "> This coding challenge is to write a function that LEFT JOINs two hashmaps into a single data structure.",
+  "main": "hashmap-left-join.js",
+  "scripts": {
+    "test": "jest --coverage --verbose"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^29.7.0"
+  }
+}

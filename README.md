@@ -26,6 +26,7 @@
 | [Class-29](./javascript/hash-table/README.md) | Hash Table |
 | [Class-31](./javascript/hashmap-repeated-word/README.md) | Hash Map Repeated Word |
 | [Class-32](./javascript/tree-intersection/README.md) | Tree Intersection |
+| [Class-33](./javascript/hashmap-left-join/README.md) | Hash Map Left Join |
 
 ---
 
