@@ -3,7 +3,7 @@
 > This coding challenge is to write a function that LEFT JOINs two hashmaps into a single data structure.
 
 ### Whiteboard Process
-![Hash Map Left Join](../images/hash-table.png)
+![Hash Map Left Join](../images/hashmap-left-join.png)
 
 ### Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
