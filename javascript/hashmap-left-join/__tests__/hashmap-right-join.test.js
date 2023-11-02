@@ -1,9 +1,9 @@
 "use strict";
 
-const leftJoin = require('../hashmap-left-join.js');
+const rightJoin = require('../hashmap-right-join.js');
 
-describe('leftJoin function', () => {
-  it('should left join two hash maps correctly', () => {
+describe('rightJoin function', () => {
+  it('should right join two hash maps correctly', () => {
     const leftMap = new Map();
     leftMap.set('happy', 'joyful');
     leftMap.set('sad', 'unhappy');
@@ -14,11 +14,11 @@ describe('leftJoin function', () => {
     rightMap.set('smart', 'dumb');
     rightMap.set('exciting', 'boring');
 
-    const result = leftJoin(leftMap, rightMap);
+    const result = rightJoin(leftMap, rightMap);
 
     expect(result.get('happy')).toEqual(['joyful', 'unhappy']);
-    expect(result.get('sad')).toEqual(['unhappy', null]);
     expect(result.get('smart')).toEqual(['intelligent', 'dumb']);
+    expect(result.get('exciting')).toEqual([null, 'boring']);
   });
 
 });

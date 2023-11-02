@@ -2,16 +2,16 @@
 
 const HashTable = require("../hash-table/hash-table.js");
 
-function leftJoin(leftMap, rightMap) {
+function rightJoin(leftMap, rightMap) {
   const result = new HashTable(1024);
 
-  Array.from(leftMap.keys()).forEach((key) => {
+  Array.from(rightMap.keys()).forEach((key) => {
     const leftValue = leftMap.get(key);
     const rightValue = rightMap.get(key);
-    result.set(key, [leftValue, rightValue || null]);
+    result.set(key, [leftValue || null, rightValue]);
   });
 
   return result;
 }
 
-module.exports = leftJoin;
+module.exports = rightJoin;
