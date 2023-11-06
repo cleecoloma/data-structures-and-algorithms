@@ -1,4 +1,5 @@
-const Graph = require("../graph.js");
+"use strict";
+const { Graph } = require("../graph.js");
 
 describe("Graph", () => {
   let graph;
