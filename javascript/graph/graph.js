@@ -27,3 +27,7 @@ addEdge(startVertex, endVertex, weight = 0) {
   const adjacencies = this.adjacencyList.get(startVertex);
   adjacencyList.push(new Edge(endVertex, weight));
 }
+
+getEdges(vertex) {
+  return [...this.adjacencyList.get(vertex)];
+}
