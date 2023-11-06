@@ -63,7 +63,7 @@ class Graph {
 
     while (queue.length) {
       let current = queue.shift();
-      console.log(current.value);
+      // console.log(current.value);
       let edges = this.getEdges(current);
 
       for (let edge of edges) {
@@ -85,7 +85,7 @@ class Graph {
 
     while (stack.length) {
       let current = stack.pop();
-      console.log(current.value);
+      // console.log(current.value);
       let edges = this.getEdges(current);
 
       for (let edge of edges) {

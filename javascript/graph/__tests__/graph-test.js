@@ -62,4 +62,52 @@ describe("Graph", () => {
     expect(graph.getVertices()).toHaveLength(2);
     expect(graph.size()).toBe(2);
   });
+
+  it("should perform BFS traversal starting from the given vertex", () => {
+    const graph = new Graph();
+    const vertexA = graph.addVertex("A");
+    const vertexB = graph.addVertex("B");
+    const vertexC = graph.addVertex("C");
+    const vertexD = graph.addVertex("D");
+    const vertexE = graph.addVertex("E");
+
+    graph.addEdge(vertexA, vertexB);
+    graph.addEdge(vertexA, vertexC);
+    graph.addEdge(vertexB, vertexD);
+    graph.addEdge(vertexC, vertexE);
+
+    const visitedVertices = graph.bfs(vertexA);
+
+    const visitedValues = [...visitedVertices].map((vertex) => vertex.value);
+    expect(visitedValues).toEqual(["A", "B", "C", "D", "E"]);
+  });
+
+  it("should return an empty array when starting from an isolated vertex", () => {
+    const graph = new Graph();
+    const vertexA = graph.addVertex("A");
+
+    const visitedVertices = graph.bfs(vertexA);
+
+    expect([...visitedVertices].map((vertex) => vertex.value)).toEqual(["A"]);
+  });
+
+  it("should perform BFS traversal starting from the given vertex with names", () => {
+    const graph = new Graph();
+    const alice = graph.addVertex("Alice");
+    const bob = graph.addVertex("Bob");
+    const charlie = graph.addVertex("Charlie");
+    const dave = graph.addVertex("Dave");
+    const elaine = graph.addVertex("Elaine");
+
+    graph.addEdge(alice, bob);
+    graph.addEdge(alice, charlie);
+    graph.addEdge(bob, dave);
+    graph.addEdge(charlie, elaine);
+
+    const visitedVertices = graph.bfs(alice);
+
+    const visitedNames = [...visitedVertices].map((vertex) => vertex.value);
+    expect(visitedNames).toEqual(["Alice", "Bob", "Charlie", "Dave", "Elaine"]);
+  });
+
 });
