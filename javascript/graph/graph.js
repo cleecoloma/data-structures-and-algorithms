@@ -33,11 +33,18 @@ getEdges(vertex) {
 }
 
 getVertices() {
-  // complete this
+    return [...this.adjacencyList.keys()];
+}
+
+getNeighbors(vertex) {
+  if (!this.adjacencyList.has(vertex)) {
+    return [];
+  }
+  return this.adjacencyList.get(vertex);
 }
 
 size() {
-  // complete this
+  return this.adjacencyList.size;
 }
 
 bfs(vertex) {
