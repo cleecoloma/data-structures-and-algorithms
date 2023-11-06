@@ -1,8 +1,9 @@
 # Challenge Title
 ## Graph
-> This coding challenge is implement graph data structure. The graph should be represented as an adjacency list and should include the following methods: add vertex, add edge, get vertices, get neighbors, and size
+> This coding challenge is implement graph data structure. The graph should be represented as an adjacency list and should include the following methods: add vertex, add edge, get vertices, get neighbors, size, and breadth first search.
 
 ### Whiteboard Process
+![Graph - Breadth First](../images/graph-breadth-first.png)
 ![Graph](../images/graph.png)
 
 ### Approach & Efficiency
@@ -33,6 +34,7 @@ npm test
 ```
 
 ### Test
+![Graph-Breadth-First](../images/graph-breadth-first-test.png)
 ![Graph](../images/graph-test.png)
 
 ### Collaborators
