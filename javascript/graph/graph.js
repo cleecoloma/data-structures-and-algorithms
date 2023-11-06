@@ -31,3 +31,30 @@ addEdge(startVertex, endVertex, weight = 0) {
 getEdges(vertex) {
   return [...this.adjacencyList.get(vertex)];
 }
+
+getVertices() {
+  // complete this
+}
+
+bfs(vertex) {
+  let queue = [];
+  let visited = new Set();
+  queue.push(vertex);
+  visited.add(vertex);
+
+  while(queue.length) {
+    let current = queue.shift();
+    console.log(current.value);
+    let edges = this.getEdges(current);
+
+    for (let edge of edges) {
+      let childVertex = edge.vertex;
+
+      if (!visited.has(childVertex)) {
+        visited.add(childVertex);
+        queue.push(childVertex);
+      }
+    }
+  }
+  return visited;
+}
