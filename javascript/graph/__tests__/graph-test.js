@@ -91,5 +91,23 @@ describe("Graph", () => {
     expect([...visitedVertices].map((vertex) => vertex.value)).toEqual(["A"]);
   });
 
+  it("should perform BFS traversal starting from the given vertex with names", () => {
+    const graph = new Graph();
+    const alice = graph.addVertex("Alice");
+    const bob = graph.addVertex("Bob");
+    const charlie = graph.addVertex("Charlie");
+    const dave = graph.addVertex("Dave");
+    const elaine = graph.addVertex("Elaine");
+
+    graph.addEdge(alice, bob);
+    graph.addEdge(alice, charlie);
+    graph.addEdge(bob, dave);
+    graph.addEdge(charlie, elaine);
+
+    const visitedVertices = graph.bfs(alice);
+
+    const visitedNames = [...visitedVertices].map((vertex) => vertex.value);
+    expect(visitedNames).toEqual(["Alice", "Bob", "Charlie", "Dave", "Elaine"]);
+  });
 
 });
