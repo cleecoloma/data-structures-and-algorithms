@@ -9,17 +9,17 @@
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 
 1. addVertex(value)
-  * Time Complexity -
-  * Space Complexity -
+  * Time Complexity - O(1)
+  * Space Complexity - O(1)
 2. addEdge(vertex1, vertex2)
-  * Time Complexity -
-  * Space Complexity -
+  * Time Complexity - O(1)
+  * Space Complexity - O(1)
 3. getVertices()
-  * Time Complexity -
-  * Space Complexity -
+  * Time Complexity - O(n)
+  * Space Complexity - O(n)
 4. getNeighbors(vertex)
-  * Time Complexity -
-  * Space Complexity -
+  * Time Complexity - O(n)
+  * Space Complexity - O(n)
 
 ### Solution
 <!-- Show how to run your code, and examples of it in action -->
