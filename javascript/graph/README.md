@@ -20,6 +20,9 @@
 4. getNeighbors(vertex)
   * Time Complexity - O(n)
   * Space Complexity - O(n)
+4. bfs(vertex)
+  * Time Complexity - O(n)
+  * Space Complexity - O(n)
 
 ### Solution
 <!-- Show how to run your code, and examples of it in action -->
