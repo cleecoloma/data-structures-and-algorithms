@@ -21,11 +21,11 @@ addVertex(value) {
 
 addEdge(startVertex, endVertex, weight = 0) {
   if (!this.adjacencyList.get(startVertex) || !this.adjacencyList.get(endVertex)) {
-    throw new Error('Invalid vertices!')
+    throw new Error('Invalid vertices!');
+  } else {
+    const adjacencies = this.adjacencyList.get(startVertex);
+    adjacencies.push(new Edge(endVertex, weight));
   }
-
-  const adjacencies = this.adjacencyList.get(startVertex);
-  adjacencyList.push(new Edge(endVertex, weight));
 }
 
 getEdges(vertex) {
@@ -33,6 +33,10 @@ getEdges(vertex) {
 }
 
 getVertices() {
+  // complete this
+}
+
+size() {
   // complete this
 }
 
@@ -57,4 +61,25 @@ bfs(vertex) {
     }
   }
   return visited;
+}
+
+dfs(vertex) {
+  let stack = [vertex];
+  let visited = new Set();
+  visited.add(vertex);
+
+  while (stack.length) {
+    let current = stack.pop();
+    console.log(current.value);
+    let edges = this.getEdges(current);
+
+    for (let edge of edges) {
+      let childVertex = edge.vertex;
+
+      if (!visited.has(childVertex)) {
+        visited.add(childVertex);
+        stack.push(childVertex);
+      }
+    }
+  }
 }
