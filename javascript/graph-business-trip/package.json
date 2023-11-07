@@ -1,0 +1,12 @@
+{
+  "name": "graph",
+  "version": "1.0.0",
+  "description": "> This coding challenge is implement graph data structure. The graph should be represented as an adjacency list and should include the following methods: add vertex, add edge, get vertices, get neighbors, and size",
+  "main": "graph.js",
+  "scripts": {
+    "test": "jest --coverage --verbose"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
