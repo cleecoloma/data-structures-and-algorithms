@@ -1,8 +1,8 @@
 {
-  "name": "graph",
+  "name": "graph-business-trip",
   "version": "1.0.0",
-  "description": "> This coding challenge is implement graph data structure. The graph should be represented as an adjacency list and should include the following methods: add vertex, add edge, get vertices, get neighbors, and size",
-  "main": "graph.js",
+  "description": "> This coding challenge is to create a function named `graph-business-trip` that takes a graph and an array of city names as arguments and returns the cost of the trip if it's feasible, or null if it's not possible.",
+  "main": "graph-business-trip.js",
   "scripts": {
     "test": "jest --coverage --verbose"
   },

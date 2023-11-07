@@ -1,113 +1,56 @@
 "use strict";
-const { Graph } = require("../graph.js");
+const { Vertex, Edge, Graph } = require("../../graph/graph.js");
+const businessTrip = require("../graph-business-trip.js");
 
-describe("Graph", () => {
-  let graph;
+describe("businessTrip Function", () => {
+  test("Calculate the cost of a successful trip", () => {
+    const flightGraph = new Graph();
 
-  beforeEach(() => {
-    graph = new Graph();
+    const cityA = flightGraph.addVertex("A");
+    const cityB = flightGraph.addVertex("B");
+    const cityC = flightGraph.addVertex("C");
+    const cityD = flightGraph.addVertex("D");
+    const cityE = flightGraph.addVertex("E");
+
+    flightGraph.addEdge(cityA, cityB, 100);
+    flightGraph.addEdge(cityB, cityC, 200);
+    flightGraph.addEdge(cityC, cityD, 150);
+    flightGraph.addEdge(cityD, cityE, 120);
+
+    const citiesToVisit = ["A", "B", "C", "D", "E"];
+    const tripCost = businessTrip(flightGraph, citiesToVisit);
+
+    expect(tripCost).toEqual(570); // Total cost of the trip
   });
 
-  it("should add a vertex to the graph", () => {
-    const vertex = graph.addVertex("A");
-    expect(graph.getVertices()).toContain(vertex);
+  test("Return null for an unsuccessful trip (missing direct flight)", () => {
+    const flightGraph = new Graph();
+
+    const cityA = flightGraph.addVertex("A");
+    const cityB = flightGraph.addVertex("B");
+    const cityC = flightGraph.addVertex("C");
+    const cityD = flightGraph.addVertex("D");
+
+    flightGraph.addEdge(cityA, cityB, 100);
+    flightGraph.addEdge(cityC, cityD, 150); // Missing flight from C to D
+
+    const citiesToVisit = [cityA, cityB, cityC, cityD];
+    const tripCost = businessTrip(flightGraph, citiesToVisit);
+
+    expect(tripCost).toBeNull(); // Trip is not possible with missing flight
   });
 
-  it("should add an edge to the graph", () => {
-    const vertexA = graph.addVertex("A");
-    const vertexB = graph.addVertex("B");
-    graph.addEdge(vertexA, vertexB, 5);
-    const edges = graph.getEdges(vertexA);
-    expect(edges).toHaveLength(1);
-    expect(edges[0].vertex).toBe(vertexB);
-    expect(edges[0].weight).toBe(5);
+  test("Return null for an invalid input (null graph or empty city list)", () => {
+    const flightGraph = new Graph();
+
+    const citiesToVisit = []; // Empty city list
+    const tripCost = businessTrip(flightGraph, citiesToVisit);
+
+    expect(tripCost).toBeNull(); // Trip is not possible with an empty city list
+
+    const nullGraph = null;
+    const tripCostWithNullGraph = businessTrip(nullGraph, ["A", "B"]);
+
+    expect(tripCostWithNullGraph).toBeNull(); // Trip is not possible with a null graph
   });
-
-  it("should retrieve a collection of all vertices from the graph", () => {
-    graph.addVertex("A");
-    graph.addVertex("B");
-    graph.addVertex("C");
-    const vertices = graph.getVertices();
-    expect(vertices).toHaveLength(3);
-    expect(vertices.map((vertex) => vertex.value)).toEqual(
-      expect.arrayContaining(["A", "B", "C"])
-    );
-  });
-
-  it("should retrieve appropriate neighbors with weights", () => {
-    const vertexA = graph.addVertex("A");
-    const vertexB = graph.addVertex("B");
-    const vertexC = graph.addVertex("C");
-    graph.addEdge(vertexA, vertexB, 5);
-    graph.addEdge(vertexA, vertexC, 3);
-    const neighbors = graph.getNeighbors(vertexA);
-    expect(neighbors).toHaveLength(2);
-    expect(neighbors[0].vertex).toBe(vertexB);
-    expect(neighbors[0].weight).toBe(5);
-    expect(neighbors[1].vertex).toBe(vertexC);
-    expect(neighbors[1].weight).toBe(3);
-  });
-
-  it("should return the proper size of the graph", () => {
-    graph.addVertex("A");
-    graph.addVertex("B");
-    graph.addVertex("C");
-    expect(graph.size()).toBe(3);
-  });
-
-  it("should handle a graph with only one vertex and edge", () => {
-    const vertexA = graph.addVertex("A");
-    const vertexB = graph.addVertex("B");
-    graph.addEdge(vertexA, vertexB, 2);
-    expect(graph.getVertices()).toHaveLength(2);
-    expect(graph.size()).toBe(2);
-  });
-
-  it("should perform BFS traversal starting from the given vertex", () => {
-    const graph = new Graph();
-    const vertexA = graph.addVertex("A");
-    const vertexB = graph.addVertex("B");
-    const vertexC = graph.addVertex("C");
-    const vertexD = graph.addVertex("D");
-    const vertexE = graph.addVertex("E");
-
-    graph.addEdge(vertexA, vertexB);
-    graph.addEdge(vertexA, vertexC);
-    graph.addEdge(vertexB, vertexD);
-    graph.addEdge(vertexC, vertexE);
-
-    const visitedVertices = graph.bfs(vertexA);
-
-    const visitedValues = [...visitedVertices].map((vertex) => vertex.value);
-    expect(visitedValues).toEqual(["A", "B", "C", "D", "E"]);
-  });
-
-  it("should return an empty array when starting from an isolated vertex", () => {
-    const graph = new Graph();
-    const vertexA = graph.addVertex("A");
-
-    const visitedVertices = graph.bfs(vertexA);
-
-    expect([...visitedVertices].map((vertex) => vertex.value)).toEqual(["A"]);
-  });
-
-  it("should perform BFS traversal starting from the given vertex with names", () => {
-    const graph = new Graph();
-    const alice = graph.addVertex("Alice");
-    const bob = graph.addVertex("Bob");
-    const charlie = graph.addVertex("Charlie");
-    const dave = graph.addVertex("Dave");
-    const elaine = graph.addVertex("Elaine");
-
-    graph.addEdge(alice, bob);
-    graph.addEdge(alice, charlie);
-    graph.addEdge(bob, dave);
-    graph.addEdge(charlie, elaine);
-
-    const visitedVertices = graph.bfs(alice);
-
-    const visitedNames = [...visitedVertices].map((vertex) => vertex.value);
-    expect(visitedNames).toEqual(["Alice", "Bob", "Charlie", "Dave", "Elaine"]);
-  });
-
 });
