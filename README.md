@@ -23,10 +23,13 @@
 | [Class-26](./javascript/sorting/insertion/README.md) | Insertion Sort |
 | [Class-27](./javascript/sorting/merge/README.md) | Merge Sort |
 | [Class-28](./javascript/sorting/comparison/README.md) | Sort Comparison |
-| [Class-29](./javascript/hash-table/README.md) | Hash Table |
+| [Class-30](./javascript/hash-table/README.md) | Hash Table |
 | [Class-31](./javascript/hashmap-repeated-word/README.md) | Hash Map Repeated Word |
 | [Class-32](./javascript/tree-intersection/README.md) | Tree Intersection |
 | [Class-33](./javascript/hashmap-left-join/README.md) | Hash Map Left Join |
+| [Class-35](./javascript/graph/README.md) | Graph |
+| [Class-36](./javascript/graph/README.md) | Graph Breadth First Search |
+| [Class-37](./javascript/graph-business-trip/README.md) | Graph Business Trip |
 
 ---
 
