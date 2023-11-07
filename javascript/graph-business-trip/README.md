@@ -9,7 +9,7 @@
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 
 1. graph-business-trip(graph, array)
-  * Time Complexity - O(1)
+  * Time Complexity - O(n^2)
   * Space Complexity - O(1)
 
 ### Solution
