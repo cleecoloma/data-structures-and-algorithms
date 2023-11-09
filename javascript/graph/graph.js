@@ -79,29 +79,31 @@ class Graph {
   }
 
   dfs(vertex) {
-    let stack = [vertex];
-    let visited = new Set();
-    visited.add(vertex);
+    const visited = new Set();
+    const stack = [vertex];
 
     while (stack.length) {
-      let current = stack.pop();
-      // console.log(current.value);
-      let edges = this.getEdges(current);
+      const current = stack.pop();
 
-      for (let edge of edges) {
-        let childVertex = edge.vertex;
+      if (!visited.has(current)) {
+        visited.add(current);
 
-        if (!visited.has(childVertex)) {
-          visited.add(childVertex);
-          stack.push(childVertex);
+        for (const edge of this.getEdges(current)) {
+          const childVertex = edge.vertex;
+
+          if (!visited.has(childVertex)) {
+            stack.push(childVertex);
+          }
         }
       }
     }
+
+    return visited;
   }
 }
 
 module.exports = {
   Vertex,
   Edge,
-  Graph
-}
+  Graph,
+};
