@@ -1,5 +1,5 @@
 "use strict";
-const { Graph } = require("../graph.js");
+const { Graph, Vertex } = require("../graph.js");
 
 describe("Graph", () => {
   let graph;
@@ -110,4 +110,51 @@ describe("Graph", () => {
     expect(visitedNames).toEqual(["Alice", "Bob", "Charlie", "Dave", "Elaine"]);
   });
 
+  it("should perform a depth-first search starting from the given vertex", () => {
+    const graph = new Graph();
+    const vertexA = graph.addVertex("A");
+    const vertexB = graph.addVertex("B");
+    const vertexC = graph.addVertex("C");
+    const vertexD = graph.addVertex("D");
+
+    graph.addEdge(vertexA, vertexB);
+    graph.addEdge(vertexA, vertexC);
+    graph.addEdge(vertexB, vertexD);
+
+    const result = graph.dfs(vertexA);
+
+    // Check if all expected vertices are visited (order-independent)
+    const visitedVertices = Array.from(result).map((vertex) => vertex.value);
+    expect(visitedVertices).toContain("A");
+    expect(visitedVertices).toContain("B");
+    expect(visitedVertices).toContain("C");
+    expect(visitedVertices).toContain("D");
+  });
+
+  it("should handle disconnected vertices", () => {
+    const graph = new Graph();
+    const vertexA = graph.addVertex("A");
+    const vertexB = graph.addVertex("B");
+    const vertexC = graph.addVertex("C");
+
+    // Only add edges between A and B, and C is disconnected
+    graph.addEdge(vertexA, vertexB);
+
+    const result = graph.dfs(vertexA);
+
+    // Check if the vertices are visited in the correct order
+    const visitedVertices = Array.from(result).map((vertex) => vertex.value);
+    expect(visitedVertices).toEqual(["A", "B"]);
+  });
+
+  it("should return an empty set for an empty graph", () => {
+    const graph = new Graph();
+    const vertices = graph.getVertices(); // Get all vertices in the empty graph
+
+    // Perform DFS on each vertex (there are no vertices in an empty graph)
+    for (const vertex of vertices) {
+      const result = graph.dfs(vertex);
+      expect(result.size).toBe(0); // Check that the result is an empty set
+    }
+  });
 });
